@@ -3,7 +3,9 @@
 /build-dir/
 *.flatpak
 /.flatpak-builder/
+/.pages/
 po/*.mo
 *.pyc
 __pycache__/
 /repo/
+/.repo-stable/

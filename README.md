@@ -30,6 +30,17 @@ No real money is involved; chips are for fun and practice only.
 
 ## Install
 
+### From the Veintiuno Flatpak repository (recommended)
+
+Open <https://h4ck70r.github.io/veintiuno/> and click **Instalar Veintiuno**, or run:
+
+```sh
+flatpak install --user https://h4ck70r.github.io/veintiuno/io.github.H4ck70r.Veintiuno.flatpakref
+```
+
+The repository is GPG-signed. Once it is added, Veintiuno shows up in GNOME Software, the Linux
+Mint Software Manager and KDE Discover, and updates together with your other apps.
+
 ### Flatpak bundle
 
 Download the `.flatpak` file from the
@@ -87,6 +98,13 @@ Project layout:
 | `src/veintiuno/devtools.py` | Scripted screenshots (`VEINTIUNO_SCREENSHOT`, `VEINTIUNO_SCRIPT`), used for the store images. |
 | `po/` | Translations. |
 | `data/` | Desktop entry, AppStream metadata, icons, screenshots. |
+
+### Releasing
+
+1. Bump the version in `meson.build`, `src/veintiuno/main.py` and the metainfo `<releases>`.
+2. Commit, tag `vX.Y.Z`, push, and create the GitHub release.
+3. Run `build-aux/publish-flatpak-repo.sh` to build, sign and publish the Flatpak repository
+   (gh-pages branch). It needs the "Veintiuno Flatpak Repository" GPG key.
 
 ### Translations
 

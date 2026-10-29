@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veintiuno — Blackjack para Linux</title>
+<meta name="description" content="Una mesa de blackjack de casino completa para Linux, por H4CK70R.">
+<link rel="icon" href="icon.svg">
+<style>
+  :root { color-scheme: dark; --felt: #0b4d2c; --gold: #f2cc6b; --ink: #f3efe6; --muted: #a9b8ae; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Cantarell, "Segoe UI", system-ui, sans-serif; color: var(--ink);
+         background: radial-gradient(ellipse at 50% 0%, #17784a 0%, var(--felt) 45%, #03170d 100%) fixed; }
+  main { max-width: 900px; margin: 0 auto; padding: 48px 16px 64px; }
+  header { display: flex; gap: 20px; align-items: center; }
+  header img { width: 96px; height: 96px; }
+  h1 { margin: 0; font-size: 2.6rem; }
+  .tag { color: var(--muted); margin: 6px 0 0; }
+  .shot { width: 100%; border-radius: 14px; margin: 32px 0; box-shadow: 0 20px 50px #0009; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; padding: 14px 22px; border-radius: 14px; font-weight: 800; text-decoration: none;
+         color: #2b1d00; background: linear-gradient(#ffe27a, #e2a20c); box-shadow: 0 4px 0 #0008; }
+  .btn.alt { color: var(--ink); background: linear-gradient(#3d4a44, #27302c); border: 1px solid #ffffff2e; }
+  h2 { color: var(--gold); margin-top: 40px; }
+  pre { background: #000a; padding: 14px 16px; border-radius: 10px; overflow-x: auto; }
+  code { font-family: "DejaVu Sans Mono", monospace; font-size: 0.92rem; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 0.9rem; }
+  a { color: var(--gold); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.svg" alt="">
+    <div>
+      <h1>Veintiuno</h1>
+      <p class="tag">Una mesa de blackjack de casino completa para Linux · por Hector "H4CK70R" Mejia</p>
+    </div>
+  </header>
+
+  <img class="shot" src="table.png" alt="Veintiuno: una mano dividida en la mesa">
+
+  <div class="buttons">
+    <a class="btn" href="io.github.H4ck70r.Veintiuno.flatpakref">Instalar Veintiuno</a>
+    <a class="btn alt" href="veintiuno.flatpakrepo">Agregar el repositorio</a>
+    <a class="btn alt" href="https://github.com/H4ck70r/veintiuno">Código fuente</a>
+  </div>
+
+  <h2>Instalar desde la terminal</h2>
+  <pre><code>flatpak install --user https://h4ck70r.github.io/veintiuno/io.github.H4ck70r.Veintiuno.flatpakref</code></pre>
+  <p>Después de instalarlo, Veintiuno aparece en tu centro de software y se actualiza solo junto con tus demás apps.</p>
+
+  <h2>Qué incluye</h2>
+  <ul>
+    <li>Pedir, plantarse, doblar, dividir hasta en cuatro manos, rendirse y seguro</li>
+    <li>Reglas configurables: de 1 a 8 barajas, 17 suave, 3:2 o 6:5, juego europeo y más</li>
+    <li>Entrenador de estrategia básica y conteo de cartas Hi-Lo</li>
+    <li>16 reversos diseñados por H4CK70R y la opción de subir los tuyos</li>
+    <li>Estadísticas, saldo guardado, animaciones y sonido</li>
+  </ul>
+  <p>Sin dinero real: las fichas son sólo para divertirse y practicar.</p>
+
+  <footer>
+    Software libre bajo GPL-3.0-or-later.
+    Más de H4CK70R: <a href="https://wololo.top">wololo.top</a> · <a href="https://kontra.gg">kontra.gg</a>
+  </footer>
+</main>
+</body>
+</html>
