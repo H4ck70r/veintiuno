@@ -3,13 +3,43 @@
 
 from __future__ import annotations
 
+import os
+import uuid
 from dataclasses import replace
 from gettext import gettext as _
 
-from gi.repository import Adw, Gtk
+import cairo
+from gi.repository import Adw, Gdk, GdkPixbuf, Gio, GLib, Gtk
+
+from .. import storage
+from . import cardart
 
 from ..engine.rules import DOUBLE_10_11, DOUBLE_9_11, DOUBLE_ANY, Rules
 from ..storage import Preferences
+
+
+def N_(message: str) -> str:
+    return message
+
+
+BACK_NAMES = {
+    "h4ck70r": "H4CK70R",
+    "hacker-oscuro": N_("Dark Hacker"),
+    "cthulhu-abismal": N_("Abyssal Cthulhu"),
+    "leviatan-abismal": N_("Abyssal Leviathan"),
+    "hidra-venenosa": N_("Venomous Hydra"),
+    "metalero-infernal": N_("Infernal Metal"),
+    "gotico-oscuro": N_("Dark Gothic"),
+    "gotico-vampirico": N_("Vampire Gothic"),
+    "gotico-polilla-mortuoria": N_("Death's-head Moth"),
+    "pesadilla-calabaza": N_("Pumpkin Nightmare"),
+    "devorador-estrellas": N_("Star Devourer"),
+    "oraculo-vacio": N_("Oracle of the Void"),
+    "angel-entropia": N_("Angel of Entropy"),
+    "reina-aracnida-cosmica": N_("Cosmic Spider Queen"),
+    "ojo-singularidad": N_("Singularity Eye"),
+    "gusano-eclipse": N_("Eclipse Worm"),
+}
 
 
 def _combo(title, subtitle, options, current):
@@ -52,13 +82,27 @@ class PreferencesDialog(Adw.PreferencesDialog):
         self.speed = _combo(_("Animation Speed"), None, [
             ("off", _("Off")), ("fast", _("Fast")), ("normal", _("Normal")), ("slow", _("Slow"))],
             prefs.animation_speed)
-        self.back = _combo(_("Card Back"), None, [
-            ("red", _("Red")), ("blue", _("Blue")), ("green", _("Green"))], prefs.card_back)
         self.totals = _switch(_("Show Hand Totals"), None, prefs.show_totals)
         self.sound = _switch(_("Sound Effects"), None, prefs.sound)
-        for row in (self.speed, self.back, self.totals, self.sound):
+        for row in (self.speed, self.totals, self.sound):
             look.add(row)
         game_page.add(look)
+
+        self._selected_back = prefs.card_back
+        self.backs_group = Adw.PreferencesGroup(
+            title=_("Card Back"),
+            description=_("Pick a design or add your own image (PNG, JPEG, WebP or SVG)"))
+        self.remove_back = Gtk.Button(icon_name="user-trash-symbolic", valign=Gtk.Align.CENTER,
+                                      tooltip_text=_("Remove this custom back"))
+        self.remove_back.add_css_class("flat")
+        self.remove_back.connect("clicked", self._on_remove_back)
+        self.backs_group.set_header_suffix(self.remove_back)
+        self.backs_box = Gtk.FlowBox(selection_mode=Gtk.SelectionMode.NONE, column_spacing=8,
+                                     row_spacing=8, max_children_per_line=8,
+                                     homogeneous=True)
+        self.backs_group.add(self.backs_box)
+        self._fill_backs()
+        game_page.add(self.backs_group)
 
         training = Adw.PreferencesGroup(title=_("Training"))
         self.coach = _switch(_("Strategy Coach"),
@@ -134,7 +178,7 @@ class PreferencesDialog(Adw.PreferencesDialog):
         rules_page.add(presets)
         self.add(rules_page)
 
-        for row in (self.speed, self.back, self.payout, self.double_on):
+        for row in (self.speed, self.payout, self.double_on):
             row.connect("notify::selected", self._changed)
         for row in (self.totals, self.sound, self.coach, self.count, self.h17, self.peek, self.das,
                     self.resplit_aces, self.hit_aces, self.unlike_tens, self.surrender,
@@ -145,6 +189,88 @@ class PreferencesDialog(Adw.PreferencesDialog):
             row.connect("notify::value", self._changed)
         self._loading = False
         self._update_edge(rules)
+
+    # -- card backs ------------------------------------------------------
+
+    def _fill_backs(self) -> None:
+        self.backs_box.remove_all()
+        backs = ["red", "blue", "green", *storage.PACK_BACKS] + storage.list_custom_backs()
+        if self._selected_back not in backs:
+            self._selected_back = "red"
+        group = None
+        names = {"red": _("Red"), "blue": _("Blue"), "green": _("Green")}
+        names.update({key: _(name) for key, name in BACK_NAMES.items()})
+        for back in backs:
+            button = Gtk.ToggleButton(active=back == self._selected_back)
+            button.add_css_class("flat")
+            button.add_css_class("back-option")
+            button.set_tooltip_text(names.get(back, _("Custom")))
+            area = Gtk.DrawingArea(content_width=72, content_height=100)
+            area.set_draw_func(lambda a, cr, w, h, b=back:
+                               cardart.draw_card_back(cr, 2, 2, w - 4, h - 4, b, a.get_scale_factor()))
+            button.set_child(area)
+            if group is None:
+                group = button
+            else:
+                button.set_group(group)
+            button.connect("toggled", self._on_back_toggled, back)
+            self.backs_box.append(button)
+
+        add = Gtk.Button(tooltip_text=_("Add a custom back…"), valign=Gtk.Align.CENTER,
+                         halign=Gtk.Align.CENTER)
+        add.add_css_class("back-option")
+        add.add_css_class("flat")
+        add.set_child(Gtk.Image(icon_name="list-add-symbolic", pixel_size=28,
+                                width_request=72, height_request=100))
+        add.connect("clicked", self._on_add_back)
+        self.backs_box.append(add)
+        for child in list(self.backs_box):
+            child.set_focusable(False)
+        self.remove_back.set_visible(self._selected_back.startswith("custom:"))
+
+    def _on_back_toggled(self, button, back) -> None:
+        if not button.get_active() or back == self._selected_back:
+            return
+        self._selected_back = back
+        self.remove_back.set_visible(back.startswith("custom:"))
+        self._changed()
+
+    def _on_add_back(self, *_args) -> None:
+        images = Gtk.FileFilter(name=_("Images"))
+        images.add_pixbuf_formats()
+        filters = Gio.ListStore.new(Gtk.FileFilter)
+        filters.append(images)
+        dialog = Gtk.FileDialog(title=_("Choose a Card Back"), filters=filters, default_filter=images)
+        dialog.open(self.get_root(), None, self._on_back_chosen)
+
+    def _on_back_chosen(self, dialog, result) -> None:
+        try:
+            file = dialog.open_finish(result)
+        except GLib.Error:
+            return  # cancelled
+        try:
+            name = import_back(file)
+        except (GLib.Error, OSError, ValueError) as err:
+            self.add_toast(Adw.Toast(title=_("Could not use that image: {error}").format(
+                error=getattr(err, "message", None) or str(err))))
+            return
+        self._selected_back = f"custom:{name}"
+        self._fill_backs()
+        self._changed()
+        self.add_toast(Adw.Toast(title=_("Custom back added"), timeout=2))
+
+    def _on_remove_back(self, *_args) -> None:
+        back = self._selected_back
+        if not back.startswith("custom:"):
+            return
+        try:
+            os.remove(os.path.join(storage.backs_dir(), back.split(":", 1)[1]))
+        except OSError:
+            pass
+        cardart.forget_custom_back(back)
+        self._selected_back = "red"
+        self._fill_backs()
+        self._changed()
 
     def _value(self, combo):
         return combo.values[combo.get_selected()]
@@ -173,7 +299,7 @@ class PreferencesDialog(Adw.PreferencesDialog):
         prefs = replace(
             self._prefs,
             animation_speed=self._value(self.speed),
-            card_back=self._value(self.back),
+            card_back=self._selected_back,
             show_totals=self.totals.get_active(),
             sound=self.sound.get_active(),
             coach=self.coach.get_active(),
@@ -211,3 +337,59 @@ class PreferencesDialog(Adw.PreferencesDialog):
         self._loading = False
         self._changed()
         self.add_toast(Adw.Toast(title=_("Preset applied"), timeout=2))
+
+
+BACK_SIZE = (480, 704)  # matches the inner panel of a card back
+MAX_PIXELS = 50_000_000
+
+
+def _load_image(data: GLib.Bytes):
+    """Return (draw(ctx), width, height) for PNG/JPEG/TIFF, SVG or anything GdkPixbuf reads."""
+    raw = data.get_data()
+    if raw.lstrip()[:5] in (b"<?xml", b"<svg ") or b"<svg" in raw[:1024]:
+        if cardart.Rsvg is None:
+            raise ValueError(_("SVG images are not supported on this system"))
+        handle = cardart.Rsvg.Handle.new_from_data(raw)
+        ok, w, h = handle.get_intrinsic_size_in_pixels()
+        w, h = (w, h) if ok and w and h else (BACK_SIZE[0], BACK_SIZE[1])
+
+        def draw_svg(ctx):
+            rect = cardart.Rsvg.Rectangle()
+            rect.x, rect.y, rect.width, rect.height = 0, 0, w, h
+            handle.render_document(ctx, rect)
+        return draw_svg, w, h
+    try:
+        texture = Gdk.Texture.new_from_bytes(data)
+    except GLib.Error:
+        loader = GdkPixbuf.PixbufLoader()
+        loader.write_bytes(data)
+        loader.close()
+        texture = Gdk.Texture.new_for_pixbuf(loader.get_pixbuf())
+    if texture.get_width() * texture.get_height() > MAX_PIXELS:
+        raise ValueError(_("the image is too large"))
+    surface = cardart.texture_surface(texture)
+
+    def draw_bitmap(ctx):
+        ctx.set_source_surface(surface, 0, 0)
+        ctx.get_source().set_filter(cairo.FILTER_BEST)
+        ctx.paint()
+    return draw_bitmap, texture.get_width(), texture.get_height()
+
+
+def import_back(file: Gio.File) -> str:
+    """Crop and scale an image to a card back and store it. Returns the file name."""
+    data, _etag = file.load_bytes(None)
+    draw, width, height = _load_image(data)
+    if width < 16 or height < 16:
+        raise ValueError(_("the image is too small"))
+    target_w, target_h = BACK_SIZE
+    fit = max(target_w / width, target_h / height)  # cover, centred
+    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, target_w, target_h)
+    ctx = cairo.Context(surface)
+    ctx.translate((target_w - width * fit) / 2, (target_h - height * fit) / 2)
+    ctx.scale(fit, fit)
+    draw(ctx)
+    os.makedirs(storage.backs_dir(), exist_ok=True)
+    name = f"{uuid.uuid4().hex}.png"
+    surface.write_to_png(os.path.join(storage.backs_dir(), name))
+    return name

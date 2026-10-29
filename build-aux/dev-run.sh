@@ -6,5 +6,5 @@ ROOT=$(cd "$(dirname "$0")/.." && pwd)
 ENVS=""
 for kv in "$@"; do ENVS="$ENVS --env=$kv"; done
 exec flatpak run --command=python3 --share=ipc --socket=x11 --socket=wayland \
-  --device=dri --socket=session-bus --filesystem="$ROOT" ${DEV_EXTRA_FS:+--filesystem=$DEV_EXTRA_FS} \
+  --device=dri --socket=pulseaudio --socket=session-bus --filesystem="$ROOT" ${DEV_EXTRA_FS:+--filesystem=$DEV_EXTRA_FS} \
   $ENVS --cwd="$ROOT/src" org.gnome.Platform//51 -m veintiuno

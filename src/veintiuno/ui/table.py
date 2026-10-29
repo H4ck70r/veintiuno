@@ -90,6 +90,7 @@ class TableView(Gtk.DrawingArea):
         self._banner: tuple[str, float, tuple] | None = None
         self._last_size = (0, 0)
         self.on_card_sound = None  # called when a card lands or flips
+        self._flying: list[tuple[int, float, float]] = []  # chips tossed onto the bet spot
 
     # -- public API ----------------------------------------------------
 
@@ -98,9 +99,18 @@ class TableView(Gtk.DrawingArea):
         self.sprites.clear()
         self.sync(animate=False)
 
+    def toss_chip(self, value: int) -> None:
+        """Animate a chip flying from the rack onto the bet spot."""
+        if self.speed > 0:
+            self._flying.append((value, _now(), 0.34 * max(self.speed, 0.6)))
+            self._ensure_tick()
+        self.queue_draw()
+
     def is_animating(self) -> bool:
         now = _now()
         if any(not s.arrived(now) for s in self.sprites.values()):
+            return True
+        if any(now < start + dur for _v, start, dur in self._flying):
             return True
         return self._banner is not None and now < self._banner[1]
 
@@ -132,14 +142,14 @@ class TableView(Gtk.DrawingArea):
 
     def _metrics(self):
         w, h = self.get_width(), self.get_height()
-        card_w = max(36.0, min(w * 0.2, h / 5.5, 150.0))
+        card_w = max(36.0, min(w * 0.2, h / 5.0, 190.0))
         return w, h, card_w, card_w / CARD_RATIO
 
     def _rows(self):
         """Vertical positions: (dealer cards top, player cards top)."""
         w, h, cw, ch = self._metrics()
-        dealer_y = cw * 0.3
-        player_y = max(h - ch - cw * 1.0, dealer_y + ch + cw * 0.9)
+        dealer_y = cw * 0.22
+        player_y = max(h - ch - cw * 0.95, dealer_y + ch + cw * 1.05)
         return dealer_y, player_y
 
     def _shoe_pos(self):
@@ -185,9 +195,9 @@ class TableView(Gtk.DrawingArea):
             if n > 1 and cw + step * (n - 1) > slot_w:
                 step = (slot_w - cw) / (n - 1)
             for i, card in enumerate(hand.cards):
-                dy = -ch * 0.07 * i
+                dy = -ch * 0.035 * i
                 if hand.doubled and i == 2:
-                    dy -= ch * 0.06
+                    dy -= ch * 0.04
                 targets[card.id] = (sx + (slot_w - cw - step * 2) / 2 + i * step, base_y + dy)
         return targets
 
@@ -299,6 +309,7 @@ class TableView(Gtk.DrawingArea):
 
     def _on_tick(self, _widget, _clock):
         now = _now()
+        self._flying = [f for f in self._flying if now < f[1] + f[2]]
         for cid, sprite in list(self.sprites.items()):
             if sprite.leaving and sprite.arrived(now):
                 del self.sprites[cid]
@@ -338,7 +349,15 @@ class TableView(Gtk.DrawingArea):
 
         # Bets and chips.
         if game.phase == BETTING:
-            self._draw_bet_spot(cr, w / 2, player_y + ch * 0.45, cw, game.bet)
+            self._flying = [f for f in self._flying if now < f[1] + f[2]]
+            in_air = sum(v for v, _s, _d in self._flying)
+            spot_y = player_y + ch * 0.45
+            self._draw_bet_spot(cr, w / 2, spot_y, cw, max(0, game.bet - in_air), game.bet)
+            for value, start, dur in self._flying:
+                t = _ease((now - start) / dur) if now > start else 0
+                fx = w / 2 + (1 - t) * cw * 0.6
+                fy = h + cw * 0.3 + (spot_y + cw * 0.08 - h - cw * 0.3) * t - math.sin(math.pi * t) * cw * 0.6
+                cardart.draw_chip(cr, fx, fy, cw * 0.28 * (1.25 - 0.25 * t), value)
         else:
             slots = self._hand_slots(len(game.hands)) if game.hands else []
             for i, (hand, (sx, slot_w)) in enumerate(zip(game.hands, slots)):
@@ -359,7 +378,8 @@ class TableView(Gtk.DrawingArea):
             if sprite.leaving and sprite.move_dur:
                 alpha = 1 - _ease((now - sprite.move_start) / sprite.move_dur) * 0.8
             cardart.draw_card(cr, sprite.card, x, y, cw, ch, up, self.back, scale, alpha,
-                              highlight=sprite.card.id in active_ids)
+                              highlight=sprite.card.id in active_ids,
+                              scale=self.get_scale_factor())
 
         # Totals and results.
         if game.dealer.cards and self.show_totals:
@@ -369,7 +389,11 @@ class TableView(Gtk.DrawingArea):
                 label = _("Blackjack") if game.dealer.is_blackjack and len(visible) == 2 else str(total)
                 n = max(len(game.dealer.cards), 2)
                 right = w / 2 + (cw + cw * 0.62 * (n - 1)) / 2
-                self._draw_badge(cr, label, right + cw * 0.45, dealer_y + ch * 0.4, cw)
+                bx, by = right + cw * 0.45, dealer_y + ch * 0.4
+                if bx + cw * 0.4 > self._shoe_pos()[0] - cw * 0.15:
+                    # Not enough room beside the cards (narrow window): put it underneath.
+                    bx, by = w / 2, dealer_y + ch + cw * 0.04
+                self._draw_badge(cr, label, bx, by, cw)
 
         slots = self._hand_slots(len(game.hands)) if game.hands else []
         settled = game.phase == ROUND_OVER and not busy
@@ -390,7 +414,11 @@ class TableView(Gtk.DrawingArea):
             n = max(len(game.dealer.cards), 2)
             left = w / 2 - (cw + cw * 0.62 * (n - 1)) / 2
             tw, _th = cardart.text_size(cr, _("Insurance?"), cw * 0.16)
-            self._draw_badge(cr, _("Insurance?"), left - cw * 0.3 - tw / 2, dealer_y + ch * 0.4, cw)
+            bx = left - cw * 0.3 - tw / 2
+            if bx - tw / 2 < self._discard_pos()[0] + cw * 1.3:
+                self._draw_badge(cr, _("Insurance?"), w / 2, dealer_y + ch + cw * 0.3, cw)
+            else:
+                self._draw_badge(cr, _("Insurance?"), bx, dealer_y + ch * 0.4, cw)
 
         if self._banner and now < self._banner[1]:
             text, end, rgb = self._banner
@@ -409,7 +437,7 @@ class TableView(Gtk.DrawingArea):
         game = self.game
         dealer_y, player_y = self._rows()
         ch = cw / CARD_RATIO
-        arc_bottom = dealer_y + ch + cw * 0.3
+        arc_bottom = dealer_y + ch + cw * 0.22
         radius = w * 1.2
         cr.save()
         cr.set_source_rgba(*GOLD, 0.35)
@@ -418,8 +446,8 @@ class TableView(Gtk.DrawingArea):
         cr.arc(w / 2, arc_bottom - radius, radius, math.pi / 2 - half, math.pi / 2 + half)
         cr.stroke()
         cr.restore()
-        if game is None:
-            return
+        if game is None or w < cw * 5.5:
+            return  # narrow windows need the space for badges
         rules = game.rules
         lines = [
             _("BLACKJACK PAYS {num} TO {den}").format(num=rules.blackjack_pays.split(":")[0],
@@ -430,12 +458,12 @@ class TableView(Gtk.DrawingArea):
             lines.append(_("Insurance pays 2 to 1"))
         y = arc_bottom + cw * 0.06
         for i, line in enumerate(lines):
-            px = cw * (0.17 if i == 0 else 0.11)
+            px = cw * (0.135 if i == 0 else 0.085)
             hgt = cardart.draw_text(cr, line, w / 2, y, px, (0.95, 0.85, 0.55),
                                     weight="Bold" if i == 0 else "Regular")
             y += hgt * 1.05
         limits = _("Table limits {min} – {max}").format(min=money(rules.min_bet), max=money(rules.max_bet))
-        cardart.draw_text(cr, limits, w / 2, y + cw * 0.02, cw * 0.11, (0.85, 0.85, 0.75),
+        cardart.draw_text(cr, limits, w / 2, y + cw * 0.02, cw * 0.085, (0.85, 0.85, 0.75),
                           weight="Regular")
 
     def _draw_shoe(self, cr, cw, ch):
@@ -448,7 +476,8 @@ class TableView(Gtk.DrawingArea):
         if game is not None:
             layers = max(1, min(6, round(6 * game.shoe.remaining / game.shoe.size)))
             for i in range(layers):
-                cardart.draw_card(cr, None, sx + i * 1.2, sy - i * 1.2, cw, ch, False, self.back)
+                cardart.draw_card(cr, None, sx + i * 1.2, sy - i * 1.2, cw, ch, False, self.back,
+                                  scale=self.get_scale_factor())
         # Discard tray.
         dx, dy = self._discard_pos()
         cardart.rounded_rect(cr, dx - cw * 0.12, dy - cw * 0.08, cw * 1.3, ch * 1.12, cw * 0.1)
@@ -457,9 +486,10 @@ class TableView(Gtk.DrawingArea):
         if self.discarded and game is not None:
             layers = max(1, min(6, round(6 * self.discarded / game.shoe.size) + 1))
             for i in range(layers):
-                cardart.draw_card(cr, None, dx + i * 1.2, dy - i * 1.2, cw, ch, False, self.back)
+                cardart.draw_card(cr, None, dx + i * 1.2, dy - i * 1.2, cw, ch, False, self.back,
+                                  scale=self.get_scale_factor())
 
-    def _draw_bet_spot(self, cr, cx, cy, cw, bet):
+    def _draw_bet_spot(self, cr, cx, cy, cw, bet, label_amount=None):
         r = cw * 0.55
         cr.save()
         cr.arc(cx, cy, r, 0, 2 * math.pi)
@@ -468,9 +498,11 @@ class TableView(Gtk.DrawingArea):
         cr.set_dash([cw * 0.06, cw * 0.04])
         cr.stroke()
         cr.restore()
+        label_amount = bet if label_amount is None else label_amount
         if bet:
             self._draw_stack(cr, cx, cy + cw * 0.08, cw * 0.28, bet)
-            cardart.draw_text(cr, money(bet), cx, cy + r + cw * 0.1, cw * 0.2, (1, 1, 1))
+        if label_amount:
+            cardart.draw_text(cr, money(label_amount), cx, cy + r + cw * 0.1, cw * 0.2, (1, 1, 1))
         else:
             cardart.draw_text(cr, _("Place your bet"), cx, cy - cw * 0.08, cw * 0.13, GOLD)
 

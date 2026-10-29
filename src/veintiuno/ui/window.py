@@ -15,6 +15,7 @@ from .preferences import PreferencesDialog
 from .sound import Sounds
 from .stats import StatsDialog
 from .table import TableView
+from .widgets import ActionButton
 
 CHIPS = (1, 5, 25, 100, 500, 1000)
 
@@ -38,7 +39,7 @@ class ChipButton(Gtk.Button):
 class Window(Adw.ApplicationWindow):
     def __init__(self, app, profile: storage.Profile):
         super().__init__(application=app, title="Veintiuno")
-        self.set_default_size(1120, 780)
+        self.set_default_size(1200, 860)
         self.set_size_request(360, 600)
         self.profile = profile
         self.game = Game(profile.rules, profile.bankroll, profile.stats)
@@ -127,18 +128,13 @@ class Window(Adw.ApplicationWindow):
     def _page(self, *rows):
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=8,
                       margin_top=8, margin_bottom=14, margin_start=12, margin_end=12)
+        box.add_css_class("controls-page")
         for row in rows:
             box.append(row)
         return box
 
-    def _button(self, label, action, suggested=False, tooltip=None):
-        button = Gtk.Button(label=label, action_name=action, use_underline=True)
-        button.add_css_class("pill")
-        if suggested:
-            button.add_css_class("suggested-action")
-        if tooltip:
-            button.set_tooltip_text(tooltip)
-        return button
+    def _button(self, label, action, icon, style, key=None, tooltip=None):
+        return ActionButton(label, action, icon, style, key, tooltip)
 
     def _betting_page(self):
         self.chip_buttons = [ChipButton(v) for v in CHIPS]
@@ -148,26 +144,30 @@ class Window(Adw.ApplicationWindow):
             button.set_tooltip_text(_("Add {amount} ({key})").format(amount=money(button.value), key=i + 1))
         chips = self._row(*self.chip_buttons, spacing=4)
         actions = self._row(
-            self._button(_("_Clear"), "win.clear", tooltip=_("Clear bet (Backspace)")),
-            self._button(_("_Rebet"), "win.rebet", tooltip=_("Bet the same as last hand (B)")),
-            self._button(_("_Deal"), "win.deal", suggested=True, tooltip=_("Deal (Enter)")),
+            self._button(_("_Clear"), "win.clear", "clear", "neutral", "⌫", _("Clear bet (Backspace)")),
+            self._button(_("_Rebet"), "win.rebet", "rebet", "neutral", "B", _("Bet the same as last hand (B)")),
+            self._button(_("_Deal"), "win.deal", "deal", "deal", "↵", _("Deal (Enter)")),
         )
         return self._page(chips, actions)
 
     def _insurance_page(self):
         self.insurance_label = Gtk.Label(wrap=True, justify=Gtk.Justification.CENTER)
-        self.insurance_yes = self._button(_("_Take Insurance"), "win.insurance-yes", tooltip="Y")
+        self.insurance_yes = self._button(_("_Take Insurance"), "win.insurance-yes", "insurance",
+                                          "double", "Y")
         return self._page(self.insurance_label, self._row(
-            self._button(_("_No Insurance"), "win.insurance-no", suggested=True, tooltip="N"),
+            self._button(_("_No Insurance"), "win.insurance-no", "decline", "neutral", "N"),
             self.insurance_yes))
 
     def _player_page(self):
         buttons = [
-            self._button(_("_Hit"), "win.hit", suggested=True, tooltip=_("Take another card (H)")),
-            self._button(_("_Stand"), "win.stand", tooltip=_("Keep your hand (S)")),
-            self._button(_("_Double"), "win.double", tooltip=_("Double the bet, take one card (D)")),
-            self._button(_("S_plit"), "win.split", tooltip=_("Split the pair into two hands (P)")),
-            self._button(_("Su_rrender"), "win.surrender", tooltip=_("Give up half the bet (R)")),
+            self._button(_("_Hit"), "win.hit", "hit", "hit", "H", _("Take another card (H)")),
+            self._button(_("_Stand"), "win.stand", "stand", "stand", "S", _("Keep your hand (S)")),
+            self._button(_("_Double"), "win.double", "double", "double", "D",
+                         _("Double the bet, take one card (D)")),
+            self._button(_("S_plit"), "win.split", "split", "split", "P",
+                         _("Split the pair into two hands (P)")),
+            self._button(_("Su_rrender"), "win.surrender", "surrender", "surrender", "R",
+                         _("Give up half the bet (R)")),
         ]
         flow = Gtk.FlowBox(selection_mode=Gtk.SelectionMode.NONE, homogeneous=True,
                            max_children_per_line=5, min_children_per_line=3,
@@ -182,14 +182,16 @@ class Window(Adw.ApplicationWindow):
         self.summary_label = Gtk.Label()
         self.summary_label.add_css_class("title-3")
         return self._page(self.summary_label, self._row(
-            self._button(_("_Change Bet"), "win.clear", tooltip=_("Place a new bet (Backspace)")),
-            self._button(_("_Rebet and Deal"), "win.deal", suggested=True, tooltip=_("Same bet, next hand (Enter)")),
+            self._button(_("_Change Bet"), "win.clear", "clear", "neutral", "⌫",
+                         _("Place a new bet (Backspace)")),
+            self._button(_("_Rebet and Deal"), "win.deal", "deal", "deal", "↵",
+                         _("Same bet, next hand (Enter)")),
         ))
 
     def _broke_page(self):
         label = Gtk.Label(label=_("You're out of chips."))
         label.add_css_class("title-3")
-        self.rebuy_button = self._button("", "win.rebuy", suggested=True)
+        self.rebuy_button = self._button("", "win.rebuy", "rebuy", "deal")
         return self._page(label, self._row(self.rebuy_button))
 
     def _install_actions(self) -> None:
@@ -259,7 +261,7 @@ class Window(Adw.ApplicationWindow):
         if phase == BETTING:
             if game.is_broke:
                 self._show_page("broke")
-                self.rebuy_button.set_label(_("Rebuy {amount}").format(
+                self.rebuy_button.set_label_text(_("Rebuy {amount}").format(
                     amount=money(self.profile.prefs.starting_bankroll)))
                 self._enable("rebuy", True)
             else:
@@ -276,7 +278,7 @@ class Window(Adw.ApplicationWindow):
             self.insurance_label.set_label(
                 _("The dealer shows an ace. You have blackjack: take even money?") if even_money else
                 _("The dealer shows an ace. Insurance costs {amount}.").format(amount=money(game.insurance_cost)))
-            self.insurance_yes.set_label(_("_Even Money") if even_money else _("_Take Insurance"))
+            self.insurance_yes.set_label_text(_("_Even Money") if even_money else _("_Take Insurance"))
             self._enable("insurance-yes", not busy)
             self._enable("insurance-no", not busy)
         elif phase == PLAYER:
@@ -397,6 +399,7 @@ class Window(Adw.ApplicationWindow):
             self.table.sync()
         if self.game.add_chip(value.get_int32()):
             self.sounds.play("chip")
+            self.table.toss_chip(value.get_int32())
             self.table.queue_draw()
         self._refresh()
 

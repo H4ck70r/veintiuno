@@ -7,3 +7,4 @@ src/veintiuno/ui/preferences.py
 src/veintiuno/ui/stats.py
 src/veintiuno/ui/table.py
 src/veintiuno/ui/window.py
+src/veintiuno/ui/widgets.py

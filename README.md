@@ -18,7 +18,8 @@ A complete casino blackjack table for Linux, built with GTK 4 and libadwaita.
   (adjusted to the current rules), on-demand hints and a Hi-Lo running/true count display.
 - **Statistics:** results, money won and lost, streaks, doubles, splits, insurance, and your
   basic-strategy accuracy. Your bankroll and stats are saved between sessions.
-- **Polished table:** vector-drawn cards and chips, smooth dealing and flip animations,
+- **Polished table:** traditional English-pattern court cards, vector-drawn pips and chips,
+  your own uploaded card backs, animated casino buttons, smooth dealing and flip animations,
   synthesized sound effects (`build-aux/gen-sounds.py`), an
   adaptive layout that works from phone-sized windows up, light and dark styles.
 - **Keyboard control:** <kbd>1</kbd>–<kbd>6</kbd> chips, <kbd>Enter</kbd> deal,
@@ -31,12 +32,12 @@ No real money is involved; chips are for fun and practice only.
 
 ### Flatpak bundle
 
-Download `Veintiuno-1.0.0.flatpak` from the
+Download the `.flatpak` file from the
 [latest release](https://github.com/H4ck70r/veintiuno/releases/latest) and open it with
 your software center, or run:
 
 ```sh
-flatpak install --user Veintiuno-1.0.0.flatpak
+flatpak install --user Veintiuno-*.flatpak
 ```
 
 The GNOME runtime is fetched from Flathub automatically.
@@ -57,7 +58,7 @@ Dependencies: Python ≥ 3.10, PyGObject, GTK ≥ 4.14, libadwaita ≥ 1.5, Meso
 On Debian/Ubuntu/Linux Mint:
 
 ```sh
-sudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 meson gettext desktop-file-utils appstream
+sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adw-1 gir1.2-rsvg-2.0 meson gettext desktop-file-utils appstream
 meson setup _build --prefix=/usr/local
 meson compile -C _build
 meson test -C _build
@@ -106,6 +107,14 @@ before submitting: a sustained development history, disclosure of any AI-generat
 in the app, a Flathub manifest written without AI assistance, and a submission pull request
 opened by a person (against the `new-pr` branch of
 [flathub/flathub](https://github.com/flathub/flathub)), not by an AI tool.
+
+## Credits
+
+Court card artwork (jacks, queens, kings): English pattern cards by Dmitry Fomin, CC0 1.0 —
+see [`src/veintiuno/cards/README.md`](src/veintiuno/cards/README.md).
+
+The sixteen bundled card backs (`src/veintiuno/backs/`) were designed by Hector "H4CK70R" Mejia
+in CorelDRAW and are released under the same license as the game.
 
 ## License
 

@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: veintiuno 1.0.0\n"
+"Project-Id-Version: veintiuno 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-29 03:13-0600\n"
+"POT-Creation-Date: 2026-10-29 04:36-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgid "Veintiuno"
 msgstr ""
 
 #: data/io.github.H4ck70r.Veintiuno.desktop.in:4 src/veintiuno/ui/help.py:68
-#: src/veintiuno/ui/table.py:369
+#: src/veintiuno/ui/table.py:389
 msgid "Blackjack"
 msgstr ""
 
@@ -77,7 +77,9 @@ msgid "Detailed statistics and a persistent bankroll"
 msgstr ""
 
 #: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:23
-msgid "Smooth card animations, sound effects and full keyboard control"
+msgid ""
+"Traditional court card artwork, custom card backs, smooth animations, sound "
+"effects and full keyboard control"
 msgstr ""
 
 #: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:25
@@ -116,16 +118,57 @@ msgstr ""
 msgid "Configurable table rules"
 msgstr ""
 
-#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:89
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:90
+msgid "Traditional English pattern artwork for jacks, queens and kings"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:91
+msgid "Redesigned casino buttons with icons, key hints and animations"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:92
+msgid "Chips fly onto the table when you bet"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:93
+msgid ""
+"Sixteen card back designs by H4CK70R: hacker, cosmic horror, gothic, metal "
+"and more"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:94
+msgid "Upload your own card back images"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:100
 msgid "First release."
 msgstr ""
 
-#: src/veintiuno/main.py:96
+#: src/veintiuno/main.py:188
 msgid "A complete casino blackjack table for Linux"
 msgstr ""
 
-#: src/veintiuno/main.py:102
+#: src/veintiuno/main.py:194
 msgid "translator-credits"
+msgstr ""
+
+#: src/veintiuno/main.py:196
+msgid "More by H4CK70R: wololo.top"
+msgstr ""
+
+#: src/veintiuno/main.py:197
+msgid "More by H4CK70R: kontra.gg"
+msgstr ""
+
+#: src/veintiuno/main.py:198 src/veintiuno/main.py:201
+msgid "Court Card Artwork"
+msgstr ""
+
+#: src/veintiuno/main.py:202
+msgid ""
+"The jack, queen and king images are the English pattern cards by Dmitry "
+"Fomin, dedicated to the public domain under <a href=\"https://"
+"creativecommons.org/publicdomain/zero/1.0/\">CC0 1.0</a>."
 msgstr ""
 
 #: src/veintiuno/ui/format.py:24 src/veintiuno/ui/help.py:36
@@ -148,7 +191,7 @@ msgstr ""
 msgid "Surrender"
 msgstr ""
 
-#: src/veintiuno/ui/format.py:34 src/veintiuno/ui/window.py:336
+#: src/veintiuno/ui/format.py:34 src/veintiuno/ui/window.py:338
 msgid "Blackjack!"
 msgstr ""
 
@@ -160,7 +203,7 @@ msgstr ""
 msgid "Lose"
 msgstr ""
 
-#: src/veintiuno/ui/format.py:37 src/veintiuno/ui/window.py:342
+#: src/veintiuno/ui/format.py:37 src/veintiuno/ui/window.py:344
 msgid "Push"
 msgstr ""
 
@@ -272,8 +315,8 @@ msgid ""
 "available as your first decision."
 msgstr ""
 
-#: src/veintiuno/ui/help.py:76 src/veintiuno/ui/preferences.py:112
-#: src/veintiuno/ui/table.py:349
+#: src/veintiuno/ui/help.py:76 src/veintiuno/ui/preferences.py:156
+#: src/veintiuno/ui/table.py:368
 msgid "Insurance"
 msgstr ""
 
@@ -293,7 +336,7 @@ msgid ""
 "tables also hits a soft 17 (a 17 counting an ace as 11)."
 msgstr ""
 
-#: src/veintiuno/ui/help.py:82 src/veintiuno/ui/preferences.py:63
+#: src/veintiuno/ui/help.py:82 src/veintiuno/ui/preferences.py:107
 msgid "Training"
 msgstr ""
 
@@ -305,223 +348,328 @@ msgid ""
 "is the running count divided by the decks left in the shoe."
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:50
+#: src/veintiuno/ui/preferences.py:27
+msgid "Dark Hacker"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:28
+msgid "Abyssal Cthulhu"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:29
+msgid "Abyssal Leviathan"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:30
+msgid "Venomous Hydra"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:31
+msgid "Infernal Metal"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:32
+msgid "Dark Gothic"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:33
+msgid "Vampire Gothic"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:34
+msgid "Death's-head Moth"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:35
+msgid "Pumpkin Nightmare"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:36
+msgid "Star Devourer"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:37
+msgid "Oracle of the Void"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:38
+msgid "Angel of Entropy"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:39
+msgid "Cosmic Spider Queen"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:40
+msgid "Singularity Eye"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:41
+msgid "Eclipse Worm"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:80
 msgid "Game"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:51
+#: src/veintiuno/ui/preferences.py:81
 msgid "Table"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:52
+#: src/veintiuno/ui/preferences.py:82
 msgid "Animation Speed"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:53
+#: src/veintiuno/ui/preferences.py:83
 msgid "Off"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:53
+#: src/veintiuno/ui/preferences.py:83
 msgid "Fast"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:53
+#: src/veintiuno/ui/preferences.py:83
 msgid "Normal"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:53
+#: src/veintiuno/ui/preferences.py:83
 msgid "Slow"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:55
-msgid "Card Back"
-msgstr ""
-
-#: src/veintiuno/ui/preferences.py:56
-msgid "Red"
-msgstr ""
-
-#: src/veintiuno/ui/preferences.py:56
-msgid "Blue"
-msgstr ""
-
-#: src/veintiuno/ui/preferences.py:56
-msgid "Green"
-msgstr ""
-
-#: src/veintiuno/ui/preferences.py:57
+#: src/veintiuno/ui/preferences.py:85
 msgid "Show Hand Totals"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:58
+#: src/veintiuno/ui/preferences.py:86
 msgid "Sound Effects"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:64
+#: src/veintiuno/ui/preferences.py:93
+msgid "Card Back"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:94
+msgid "Pick a design or add your own image (PNG, JPEG, WebP or SVG)"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:96
+msgid "Remove this custom back"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:108
 msgid "Strategy Coach"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:65
+#: src/veintiuno/ui/preferences.py:109
 msgid "Warn when a decision differs from basic strategy"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:66
+#: src/veintiuno/ui/preferences.py:110
 msgid "Show Card Count"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:67
+#: src/veintiuno/ui/preferences.py:111
 msgid "Display the Hi-Lo running and true count"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:72 src/veintiuno/ui/stats.py:56
+#: src/veintiuno/ui/preferences.py:116 src/veintiuno/ui/stats.py:56
 msgid "Money"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:73
+#: src/veintiuno/ui/preferences.py:117
 msgid "Starting Bankroll"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:73
+#: src/veintiuno/ui/preferences.py:117
 msgid "Used for new games and rebuys"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:75
+#: src/veintiuno/ui/preferences.py:119
 msgid "Minimum Bet"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:76
+#: src/veintiuno/ui/preferences.py:120
 msgid "Maximum Bet"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:83
+#: src/veintiuno/ui/preferences.py:127
 msgid "Rules"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:84
+#: src/veintiuno/ui/preferences.py:128
 msgid "Shoe and Dealer"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:87
+#: src/veintiuno/ui/preferences.py:131
 msgid "Decks"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:88
+#: src/veintiuno/ui/preferences.py:132
 msgid "Penetration"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:88
+#: src/veintiuno/ui/preferences.py:132
 msgid "Percent of the shoe dealt before reshuffling"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:90
+#: src/veintiuno/ui/preferences.py:134
 msgid "Dealer Hits Soft 17"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:91
+#: src/veintiuno/ui/preferences.py:135
 msgid "Dealer Peeks for Blackjack"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:92
+#: src/veintiuno/ui/preferences.py:136
 msgid ""
 "Off plays the European no-hole-card game: doubles and splits are lost to a "
 "dealer blackjack"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:95
+#: src/veintiuno/ui/preferences.py:139
 msgid "Blackjack Pays"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:101
+#: src/veintiuno/ui/preferences.py:145
 msgid "Player Options"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:102
+#: src/veintiuno/ui/preferences.py:146
 msgid "Double Down On"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:103
+#: src/veintiuno/ui/preferences.py:147
 msgid "Any two cards"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:103
+#: src/veintiuno/ui/preferences.py:147
 msgid "9, 10 or 11"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:104
+#: src/veintiuno/ui/preferences.py:148
 msgid "10 or 11"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:105
+#: src/veintiuno/ui/preferences.py:149
 msgid "Double After Split"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:106
+#: src/veintiuno/ui/preferences.py:150
 msgid "Maximum Hands After Splitting"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:107
+#: src/veintiuno/ui/preferences.py:151
 msgid "Resplit Aces"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:108
+#: src/veintiuno/ui/preferences.py:152
 msgid "Hit Split Aces"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:109
+#: src/veintiuno/ui/preferences.py:153
 msgid "Split Unlike Tens"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:109
+#: src/veintiuno/ui/preferences.py:153
 msgid "For example, a king and a queen"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:111
+#: src/veintiuno/ui/preferences.py:155
 msgid "Late Surrender"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:118
+#: src/veintiuno/ui/preferences.py:162
 msgid "Presets"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:120
+#: src/veintiuno/ui/preferences.py:164
 msgid "Las Vegas Strip"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:120
+#: src/veintiuno/ui/preferences.py:164
 msgid "6 decks, S17, DAS, late surrender, 3:2"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:121
+#: src/veintiuno/ui/preferences.py:165
 msgid "Atlantic City"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:121
+#: src/veintiuno/ui/preferences.py:165
 msgid "8 decks, S17, DAS, late surrender, 3:2"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:123
+#: src/veintiuno/ui/preferences.py:167
 msgid "Downtown Single Deck"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:123
+#: src/veintiuno/ui/preferences.py:167
 msgid "1 deck, H17, doubles on 10–11 only, 3:2"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:126
+#: src/veintiuno/ui/preferences.py:170
 msgid "European"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:126
+#: src/veintiuno/ui/preferences.py:170
 msgid "6 decks, no hole card, doubles on 9–11, no surrender"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:194
+#: src/veintiuno/ui/preferences.py:201
+msgid "Red"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:201
+msgid "Blue"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:201
+msgid "Green"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:207
+msgid "Custom"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:219
+msgid "Add a custom back…"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:239
+msgid "Images"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:243
+msgid "Choose a Card Back"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:254
+#, python-brace-format
+msgid "Could not use that image: {error}"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:260
+msgid "Custom back added"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:320
 #, python-brace-format
 msgid "House edge ≈ {edge:.2f}%"
 msgstr ""
 
-#: src/veintiuno/ui/preferences.py:213
+#: src/veintiuno/ui/preferences.py:339
 msgid "Preset applied"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:351
+msgid "SVG images are not supported on this system"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:369
+msgid "the image is too large"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:384
+msgid "the image is too small"
 msgstr ""
 
 #: src/veintiuno/ui/stats.py:24 src/veintiuno/ui/stats.py:85
@@ -640,152 +788,152 @@ msgstr ""
 msgid "All statistics will be permanently erased."
 msgstr ""
 
-#: src/veintiuno/ui/stats.py:84 src/veintiuno/ui/window.py:435
+#: src/veintiuno/ui/stats.py:84 src/veintiuno/ui/window.py:438
 msgid "_Cancel"
 msgstr ""
 
-#: src/veintiuno/ui/table.py:392 src/veintiuno/ui/table.py:393
+#: src/veintiuno/ui/table.py:412 src/veintiuno/ui/table.py:413
 msgid "Insurance?"
 msgstr ""
 
-#: src/veintiuno/ui/table.py:425
+#: src/veintiuno/ui/table.py:445
 #, python-brace-format
 msgid "BLACKJACK PAYS {num} TO {den}"
 msgstr ""
 
-#: src/veintiuno/ui/table.py:427
+#: src/veintiuno/ui/table.py:447
 msgid "Dealer hits soft 17"
 msgstr ""
 
-#: src/veintiuno/ui/table.py:427
+#: src/veintiuno/ui/table.py:447
 msgid "Dealer stands on all 17s"
 msgstr ""
 
-#: src/veintiuno/ui/table.py:430
+#: src/veintiuno/ui/table.py:450
 msgid "Insurance pays 2 to 1"
 msgstr ""
 
-#: src/veintiuno/ui/table.py:437
+#: src/veintiuno/ui/table.py:457
 #, python-brace-format
 msgid "Table limits {min} – {max}"
 msgstr ""
 
-#: src/veintiuno/ui/table.py:475
+#: src/veintiuno/ui/table.py:499
 msgid "Place your bet"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:34
+#: src/veintiuno/ui/window.py:35
 #, python-brace-format
 msgid "Add a {amount} chip"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:35 src/veintiuno/ui/window.py:313
+#: src/veintiuno/ui/window.py:36 src/veintiuno/ui/window.py:315
 #, python-brace-format
 msgid "Bet {amount}"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:66
+#: src/veintiuno/ui/window.py:67
 msgid "Basic strategy hint (?)"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:71 src/veintiuno/ui/window.py:436
+#: src/veintiuno/ui/window.py:72 src/veintiuno/ui/window.py:439
 msgid "_New Game"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:72
+#: src/veintiuno/ui/window.py:73
 msgid "_Statistics"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:75
+#: src/veintiuno/ui/window.py:76
 msgid "_Preferences"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:76
+#: src/veintiuno/ui/window.py:77
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:77
+#: src/veintiuno/ui/window.py:78
 msgid "_How to Play"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:78
+#: src/veintiuno/ui/window.py:79
 msgid "_About Veintiuno"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:81
+#: src/veintiuno/ui/window.py:82
 msgid "Main Menu"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:148
+#: src/veintiuno/ui/window.py:144
 #, python-brace-format
 msgid "Add {amount} ({key})"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:151
+#: src/veintiuno/ui/window.py:147
 msgid "_Clear"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:151
+#: src/veintiuno/ui/window.py:147
 msgid "Clear bet (Backspace)"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:152
+#: src/veintiuno/ui/window.py:148
 msgid "_Rebet"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:152
+#: src/veintiuno/ui/window.py:148
 msgid "Bet the same as last hand (B)"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:153
+#: src/veintiuno/ui/window.py:149
 msgid "_Deal"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:153
+#: src/veintiuno/ui/window.py:149
 msgid "Deal (Enter)"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:159 src/veintiuno/ui/window.py:279
+#: src/veintiuno/ui/window.py:155 src/veintiuno/ui/window.py:281
 msgid "_Take Insurance"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:161
+#: src/veintiuno/ui/window.py:158
 msgid "_No Insurance"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:166
+#: src/veintiuno/ui/window.py:163
 msgid "_Hit"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:166
+#: src/veintiuno/ui/window.py:163
 msgid "Take another card (H)"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:167
+#: src/veintiuno/ui/window.py:164
 msgid "_Stand"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:167
+#: src/veintiuno/ui/window.py:164
 msgid "Keep your hand (S)"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:168
+#: src/veintiuno/ui/window.py:165
 msgid "_Double"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:168
+#: src/veintiuno/ui/window.py:166
 msgid "Double the bet, take one card (D)"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:169
+#: src/veintiuno/ui/window.py:167
 msgid "S_plit"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:169
+#: src/veintiuno/ui/window.py:168
 msgid "Split the pair into two hands (P)"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:170
+#: src/veintiuno/ui/window.py:169
 msgid "Su_rrender"
 msgstr ""
 
@@ -797,130 +945,130 @@ msgstr ""
 msgid "_Change Bet"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:185
+#: src/veintiuno/ui/window.py:186
 msgid "Place a new bet (Backspace)"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:186
+#: src/veintiuno/ui/window.py:187
 msgid "_Rebet and Deal"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:186
+#: src/veintiuno/ui/window.py:188
 msgid "Same bet, next hand (Enter)"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:190
+#: src/veintiuno/ui/window.py:192
 msgid "You're out of chips."
 msgstr ""
 
-#: src/veintiuno/ui/window.py:262
+#: src/veintiuno/ui/window.py:264
 #, python-brace-format
 msgid "Rebuy {amount}"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:277
+#: src/veintiuno/ui/window.py:279
 msgid "The dealer shows an ace. You have blackjack: take even money?"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:278
+#: src/veintiuno/ui/window.py:280
 #, python-brace-format
 msgid "The dealer shows an ace. Insurance costs {amount}."
 msgstr ""
 
-#: src/veintiuno/ui/window.py:279
+#: src/veintiuno/ui/window.py:281
 msgid "_Even Money"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:299
+#: src/veintiuno/ui/window.py:301
 #, python-brace-format
 msgid "Bankroll {amount}"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:304
+#: src/veintiuno/ui/window.py:306
 #, python-brace-format
 msgid "RC {rc:+d} · TC {tc:+.1f} · Shoe {pct}%"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:307
+#: src/veintiuno/ui/window.py:309
 #, python-brace-format
 msgid "Edge {edge:.2f}%"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:308
+#: src/veintiuno/ui/window.py:310
 msgid "House edge with perfect basic strategy"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:311
+#: src/veintiuno/ui/window.py:313
 #, python-brace-format
 msgid "Hand {n} of {total}"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:314
+#: src/veintiuno/ui/window.py:316
 msgid "Choose your chips"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:330
+#: src/veintiuno/ui/window.py:332
 msgid "H Hit · S Stand · D Double · P Split · R Surrender"
-msgstr ""
-
-#: src/veintiuno/ui/window.py:345
-#, python-brace-format
-msgid "Dealer busts · {net}"
 msgstr ""
 
 #: src/veintiuno/ui/window.py:347
 #, python-brace-format
+msgid "Dealer busts · {net}"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:349
+#, python-brace-format
 msgid "Dealer {total} · {net}"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:350
+#: src/veintiuno/ui/window.py:352
 msgid "Insurance won"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:350
+#: src/veintiuno/ui/window.py:352
 msgid "Insurance lost"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:370
+#: src/veintiuno/ui/window.py:372
 #, python-brace-format
 msgid "Basic strategy: {advice} (you chose {action})"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:390
+#: src/veintiuno/ui/window.py:392
 #, python-brace-format
 msgid "New shoe: {decks} decks shuffled"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:391
+#: src/veintiuno/ui/window.py:393
 msgid "New deck shuffled"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:421
+#: src/veintiuno/ui/window.py:424
 #, python-brace-format
 msgid "Rebought {amount}"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:428
+#: src/veintiuno/ui/window.py:431
 #, python-brace-format
 msgid "Basic strategy says: {action}"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:432
+#: src/veintiuno/ui/window.py:435
 msgid "Start a New Game?"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:433
+#: src/veintiuno/ui/window.py:436
 #, python-brace-format
 msgid ""
 "Your bankroll goes back to {amount} and a fresh shoe is shuffled. Statistics "
 "are kept."
 msgstr ""
 
-#: src/veintiuno/ui/window.py:475
+#: src/veintiuno/ui/window.py:478
 msgid "New rules apply from the next hand"
 msgstr ""
 
-#: src/veintiuno/ui/window.py:500
+#: src/veintiuno/ui/window.py:503
 #, python-brace-format
 msgid "Could not save your progress: {error}"
 msgstr ""

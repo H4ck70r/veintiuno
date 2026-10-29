@@ -20,7 +20,7 @@
       <li>Strategy coach that warns you when a play differs from basic strategy</li>
       <li>Hi-Lo running and true count trainer</li>
       <li>Detailed statistics and a persistent bankroll</li>
-      <li>Smooth card animations, sound effects and full keyboard control</li>
+      <li>Traditional court card artwork, custom card backs, smooth animations, sound effects and full keyboard control</li>
     </ul>
     <p>No real money is involved: chips are for fun and practice only.</p>
   </description>
@@ -70,20 +70,31 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/H4ck70r/veintiuno/v1.0.0/data/screenshots/table.png</image>
+      <image>https://raw.githubusercontent.com/H4ck70r/veintiuno/v1.1.0/data/screenshots/table.png</image>
       <caption>Playing a split hand</caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/H4ck70r/veintiuno/v1.0.0/data/screenshots/betting.png</image>
+      <image>https://raw.githubusercontent.com/H4ck70r/veintiuno/v1.1.0/data/screenshots/betting.png</image>
       <caption>Placing a bet</caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/H4ck70r/veintiuno/v1.0.0/data/screenshots/rules.png</image>
+      <image>https://raw.githubusercontent.com/H4ck70r/veintiuno/v1.1.0/data/screenshots/rules.png</image>
       <caption>Configurable table rules</caption>
     </screenshot>
   </screenshots>
 
   <releases>
+    <release version="1.1.0" date="2026-10-29">
+      <description>
+        <ul>
+          <li>Traditional English pattern artwork for jacks, queens and kings</li>
+          <li>Redesigned casino buttons with icons, key hints and animations</li>
+          <li>Chips fly onto the table when you bet</li>
+          <li>Sixteen card back designs by H4CK70R: hacker, cosmic horror, gothic, metal and more</li>
+          <li>Upload your own card back images</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.0" date="2026-10-29">
       <description>
         <p>First release.</p>

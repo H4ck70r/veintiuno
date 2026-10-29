@@ -4,13 +4,32 @@
 from __future__ import annotations
 
 import math
+import os
 
+import cairo
 import gi
 
 gi.require_version("PangoCairo", "1.0")
-from gi.repository import Pango, PangoCairo  # noqa: E402
+from gi.repository import Gdk, GLib, Pango, PangoCairo  # noqa: E402
 
-from ..engine.cards import DIAMONDS, HEARTS, SPADES  # noqa: E402
+try:
+    gi.require_version("Rsvg", "2.0")
+    from gi.repository import Rsvg  # noqa: E402
+except (ValueError, ImportError):
+    Rsvg = None
+
+from .. import storage  # noqa: E402
+from ..engine.cards import CLUBS, DIAMONDS, HEARTS, SPADES  # noqa: E402
+
+COURT_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "cards")
+COURT_NAMES = {11: "jack", 12: "queen", 13: "king"}
+SUIT_NAMES = {SPADES: "spades", HEARTS: "hearts", DIAMONDS: "diamonds", CLUBS: "clubs"}
+COURT_SIZE = (360, 540)  # size of the court card SVG documents
+_court_handles: dict = {}
+_court_cache: dict = {}
+_back_cache: dict = {}
+PACK_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "backs")
+_scaled_cache: dict = {}
 
 RED = (0.80, 0.10, 0.16)
 BLACK = (0.10, 0.10, 0.12)
@@ -140,7 +159,64 @@ PIPS = {
 }
 
 
-def draw_card_face(cr, card, x, y, w, h):
+def _court_surface(card, w, h, scale):
+    """Render a court card SVG at the card's pixel size (cached)."""
+    if Rsvg is None:
+        return None
+    pw, ph = max(1, round(w * scale)), max(1, round(h * scale))
+    key = (card.rank, card.suit, pw, ph)
+    surface = _court_cache.get(key)
+    if surface is not None:
+        return surface
+    path = os.path.join(COURT_DIR, f"{COURT_NAMES[card.rank]}_{SUIT_NAMES[card.suit]}.svg")
+    handle = _court_handles.get(path)
+    if handle is None:
+        try:
+            handle = Rsvg.Handle.new_from_file(path)
+        except GLib.Error:
+            return None
+        _court_handles[path] = handle
+    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, pw, ph)
+    ctx = cairo.Context(surface)
+    ctx.scale(pw / COURT_SIZE[0], ph / COURT_SIZE[1])
+    viewport = Rsvg.Rectangle()
+    viewport.x, viewport.y = 0, 0
+    viewport.width, viewport.height = COURT_SIZE
+    try:
+        handle.render_document(ctx, viewport)
+    except GLib.Error:
+        return None
+    if len(_court_cache) > 64:
+        _court_cache.clear()
+    _court_cache[key] = surface
+    return surface
+
+
+def _draw_court_art(cr, card, x, y, w, h, scale) -> bool:
+    surface = _court_surface(card, w, h, scale)
+    if surface is None:
+        return False
+    r = w * 0.08
+    cr.save()
+    rounded_rect(cr, x, y, w, h, r)
+    cr.set_source_rgb(1, 1, 1)
+    cr.fill_preserve()
+    cr.clip()
+    cr.translate(x, y)
+    cr.scale(1 / scale, 1 / scale)
+    cr.set_source_surface(surface, 0, 0)
+    cr.paint()
+    cr.restore()
+    rounded_rect(cr, x, y, w, h, r)
+    cr.set_source_rgba(0, 0, 0, 0.25)
+    cr.set_line_width(max(1, w * 0.012))
+    cr.stroke()
+    return True
+
+
+def draw_card_face(cr, card, x, y, w, h, scale=1):
+    if card.rank > 10 and _draw_court_art(cr, card, x, y, w, h, scale):
+        return
     color = RED if card.is_red else BLACK
     r = w * 0.08
     rounded_rect(cr, x, y, w, h, r)
@@ -200,7 +276,64 @@ def draw_card_face(cr, card, x, y, w, h):
         draw_suit(cr, card.suit, fx + fw / 2, fy + fh * 0.78, fw * 0.36)
 
 
-def draw_card_back(cr, x, y, w, h, back="red"):
+def texture_surface(texture: Gdk.Texture) -> cairo.ImageSurface:
+    """Convert a GdkTexture into a Cairo image surface."""
+    downloader = Gdk.TextureDownloader.new(texture)
+    downloader.set_format(Gdk.MemoryFormat.B8G8R8A8_PREMULTIPLIED)
+    data, stride = downloader.download_bytes()
+    return cairo.ImageSurface.create_for_data(bytearray(data.get_data()), cairo.FORMAT_ARGB32,
+                                              texture.get_width(), texture.get_height(), stride)
+
+
+def _load_back(back: str):
+    """Full-size image of a bundled or custom back, or None."""
+    if back in storage.PACK_BACKS:
+        path = os.path.join(PACK_DIR, f"{back}.jpg")
+    elif back.startswith("custom:"):
+        path = os.path.join(storage.backs_dir(), back.split(":", 1)[1])
+    else:
+        return None
+    surface = _back_cache.get(path)
+    if surface is None:
+        try:
+            surface = texture_surface(Gdk.Texture.new_from_filename(path))
+        except GLib.Error:
+            return None
+        _back_cache[path] = surface
+    return surface
+
+
+def custom_back_surface(back: str, w: float = 0, h: float = 0, scale: float = 1):
+    """Image for a bundled or custom ("custom:<file>") back, pre-scaled to w×h points."""
+    source = _load_back(back)
+    if source is None or w <= 0 or h <= 0:
+        return source
+    pw, ph = max(1, round(w * scale)), max(1, round(h * scale))
+    key = (back, pw, ph)
+    surface = _scaled_cache.get(key)
+    if surface is None:
+        surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, pw, ph)
+        ctx = cairo.Context(surface)
+        sw, sh = source.get_width(), source.get_height()
+        fit = max(pw / sw, ph / sh)
+        ctx.translate((pw - sw * fit) / 2, (ph - sh * fit) / 2)
+        ctx.scale(fit, fit)
+        ctx.set_source_surface(source, 0, 0)
+        ctx.get_source().set_filter(cairo.FILTER_BEST)
+        ctx.paint()
+        if len(_scaled_cache) > 48:
+            _scaled_cache.clear()
+        _scaled_cache[key] = surface
+    return surface
+
+
+def forget_custom_back(back: str) -> None:
+    _back_cache.pop(os.path.join(storage.backs_dir(), back.split(":", 1)[-1]), None)
+    for key in [k for k in _scaled_cache if k[0] == back]:
+        del _scaled_cache[key]
+
+
+def draw_card_back(cr, x, y, w, h, back="red", scale=1):
     r = w * 0.08
     rounded_rect(cr, x, y, w, h, r)
     cr.set_source_rgb(*CARD_FACE)
@@ -209,11 +342,29 @@ def draw_card_back(cr, x, y, w, h, back="red"):
     cr.set_line_width(max(1, w * 0.012))
     cr.stroke()
 
-    m = w * 0.07
+    m = w * 0.028
     ix, iy, iw, ih = x + m, y + m, w - 2 * m, h - 2 * m
+    image = custom_back_surface(back, iw, ih, scale)
+    if image is not None:
+        cr.save()
+        rounded_rect(cr, ix, iy, iw, ih, r * 0.75)
+        cr.clip()
+        iw0, ih0 = image.get_width(), image.get_height()
+        fit = max(iw / iw0, ih / ih0)
+        cr.translate(ix + (iw - iw0 * fit) / 2, iy + (ih - ih0 * fit) / 2)
+        cr.scale(fit, fit)
+        cr.set_source_surface(image, 0, 0)
+        cr.get_source().set_filter(cairo.FILTER_GOOD)
+        cr.paint()
+        cr.restore()
+        rounded_rect(cr, ix, iy, iw, ih, r * 0.75)
+        cr.set_source_rgba(0, 0, 0, 0.2)
+        cr.set_line_width(max(1, w * 0.01))
+        cr.stroke()
+        return
     base = BACKS.get(back, BACKS["red"])
     cr.save()
-    rounded_rect(cr, ix, iy, iw, ih, r * 0.6)
+    rounded_rect(cr, ix, iy, iw, ih, r * 0.75)
     cr.clip_preserve()
     cr.set_source_rgb(*base)
     cr.fill()
@@ -237,13 +388,14 @@ def draw_card_back(cr, x, y, w, h, back="red"):
     cr.stroke()
     draw_text(cr, "21", x + w / 2, y + h / 2 - w * 0.11, w * 0.16, (1, 1, 1))
     cr.restore()
-    rounded_rect(cr, ix, iy, iw, ih, r * 0.6)
+    rounded_rect(cr, ix, iy, iw, ih, r * 0.75)
     cr.set_source_rgba(1, 1, 1, 0.6)
     cr.set_line_width(max(1, w * 0.015))
     cr.stroke()
 
 
-def draw_card(cr, card, x, y, w, h, face_up, back="red", flip=1.0, alpha=1.0, highlight=False):
+def draw_card(cr, card, x, y, w, h, face_up, back="red", flip=1.0, alpha=1.0, highlight=False,
+              scale=1):
     """Draw a card at (x, y). `flip` in [-1, 1] squeezes it horizontally."""
     cr.save()
     cx = x + w / 2
@@ -257,9 +409,9 @@ def draw_card(cr, card, x, y, w, h, face_up, back="red", flip=1.0, alpha=1.0, hi
     cr.set_source_rgba(0, 0, 0, 0.28)
     cr.fill()
     if face_up and card is not None:
-        draw_card_face(cr, card, x, y, w, h)
+        draw_card_face(cr, card, x, y, w, h, scale)
     else:
-        draw_card_back(cr, x, y, w, h, back)
+        draw_card_back(cr, x, y, w, h, back, scale)
     if highlight:
         rounded_rect(cr, x - 2, y - 2, w + 4, h + 4, w * 0.1)
         cr.set_source_rgba(1.0, 0.85, 0.3, 0.9)

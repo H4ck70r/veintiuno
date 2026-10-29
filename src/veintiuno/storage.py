@@ -33,7 +33,8 @@ class Preferences:
                 setattr(prefs, f.name, data[f.name])
         if prefs.animation_speed not in ANIMATION_SPEEDS:
             prefs.animation_speed = "normal"
-        if prefs.card_back not in ("red", "blue", "green"):
+        builtin = ("red", "blue", "green", *PACK_BACKS)
+        if prefs.card_back not in builtin and not prefs.card_back.startswith("custom:"):
             prefs.card_back = "red"
         return prefs
 
@@ -45,6 +46,28 @@ class Profile:
     prefs: Preferences = field(default_factory=Preferences)
     stats: Stats = field(default_factory=Stats)
     last_bet: int = 0
+
+
+# Card backs designed by Hector "H4CK70R" Mejia, bundled in veintiuno/backs/<name>.jpg.
+PACK_BACKS = (
+    "h4ck70r", "hacker-oscuro", "cthulhu-abismal", "leviatan-abismal", "hidra-venenosa",
+    "metalero-infernal", "gotico-oscuro", "gotico-vampirico", "gotico-polilla-mortuoria",
+    "pesadilla-calabaza", "devorador-estrellas", "oraculo-vacio", "angel-entropia",
+    "reina-aracnida-cosmica", "ojo-singularidad", "gusano-eclipse",
+)
+
+
+def backs_dir() -> str:
+    """Folder holding the player's custom card back images."""
+    return os.path.join(GLib.get_user_data_dir(), "veintiuno", "backs")
+
+
+def list_custom_backs() -> list[str]:
+    try:
+        names = sorted(n for n in os.listdir(backs_dir()) if n.endswith(".png"))
+    except OSError:
+        return []
+    return [f"custom:{n}" for n in names]
 
 
 def _path() -> str:
