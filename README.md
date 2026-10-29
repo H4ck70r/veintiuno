@@ -29,7 +29,19 @@ No real money is involved; chips are for fun and practice only.
 
 ## Install
 
-### Flatpak (recommended)
+### Flatpak bundle
+
+Download `Veintiuno-1.0.0.flatpak` from the
+[latest release](https://github.com/H4ck70r/veintiuno/releases/latest) and open it with
+your software center, or run:
+
+```sh
+flatpak install --user Veintiuno-1.0.0.flatpak
+```
+
+The GNOME runtime is fetched from Flathub automatically.
+
+### Flatpak from source
 
 ```sh
 flatpak install --user flathub org.flatpak.Builder
@@ -89,11 +101,11 @@ To add a language, copy the template to `po/<lang>.po`, translate it, and add th
 
 ## Publishing on Flathub
 
-1. Push this repository to `github.com/H4ck70r/veintiuno` and tag a release (`v1.0.0`).
-2. In the manifest, replace the `dir` source with a `git` source pointing at that tag and commit.
-3. Fork [flathub/flathub](https://github.com/flathub/flathub), add the manifest on a new branch
-   and open a pull request against `new-pr`, following the
-   [submission guide](https://docs.flathub.org/docs/for-app-authors/submission).
+Flathub's [requirements](https://docs.flathub.org/docs/for-app-authors/requirements) apply
+before submitting: a sustained development history, disclosure of any AI-generated material
+in the app, a Flathub manifest written without AI assistance, and a submission pull request
+opened by a person (against the `new-pr` branch of
+[flathub/flathub](https://github.com/flathub/flathub)), not by an AI tool.
 
 ## License
 
