@@ -1,0 +1,11 @@
+[Flatpak Ref]
+Title=Veintiuno
+Name=io.github.H4ck70r.Veintiuno
+Branch=stable
+Url=https://h4ck70r.github.io/veintiuno/repo/
+SuggestRemoteName=veintiuno
+Homepage=https://github.com/H4ck70r/veintiuno
+Icon=https://h4ck70r.github.io/veintiuno/icon.svg
+RuntimeRepo=https://dl.flathub.org/repo/flathub.flatpakrepo
+IsRuntime=false
+GPGKey=mDMEauMkUhYJKwYBBAHaRw8BAQdAanVIq0+pZgKZpfSYtM9qGZu+C2Xw6Jsi20XK3EjYOAe0JlZlaW50aXVubyBGbGF0cGFrIFJlcG9zaXRvcnkgKEg0Q0s3MFIpiJkEExYKAEEWIQRZqxHnOI5+J7etJNSN1Oy5yX8gKwUCauMkUgIbAwUJCWYBgAULCQgHAgIiAgYVCgkICwIEFgIDAQIeBwIXgAAKCRCN1Oy5yX8gK0sZAQCQNuosM4bkqAoU2gPf9BP65syHbBVXT6YJCb2KPcbtLwEAo4qwEZaKM1P9CZChHB21sTL8U4DEEMJvCuZq2qE85wk=

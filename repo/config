@@ -1,0 +1,10 @@
+[core]
+repo_version=1
+mode=archive-z2
+indexed-deltas=true
+
+[flatpak]
+title=Veintiuno
+homepage=https://github.com/H4ck70r/veintiuno
+icon=https://h4ck70r.github.io/veintiuno/icon.svg
+default-branch=stable
