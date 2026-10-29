@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Veintiuno
+GenericName=Blackjack
+Comment=Play casino blackjack and practise basic strategy
+# Translators: Search terms to find this application. Do NOT translate or localise the semicolons. The list MUST also end with a semicolon.
+Keywords=blackjack;21;twenty-one;cards;casino;veintiuno;
+Exec=veintiuno
+Icon=io.github.H4ck70r.Veintiuno
+Terminal=false
+Type=Application
+Categories=Game;CardGame;
+StartupNotify=true

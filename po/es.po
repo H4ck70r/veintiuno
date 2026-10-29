@@ -1,0 +1,925 @@
+# Spanish translation for Veintiuno.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the veintiuno package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: veintiuno 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-29 03:13-0600\n"
+"PO-Revision-Date: 2026-10-29 03:00-0600\n"
+"Last-Translator: Hector \"H4CK70R\" Mejia\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/io.github.H4ck70r.Veintiuno.desktop.in:3
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:8
+msgid "Veintiuno"
+msgstr "Veintiuno"
+
+#: data/io.github.H4ck70r.Veintiuno.desktop.in:4 src/veintiuno/ui/help.py:68
+#: src/veintiuno/ui/table.py:369
+msgid "Blackjack"
+msgstr "Blackjack"
+
+#: data/io.github.H4ck70r.Veintiuno.desktop.in:5
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:9
+msgid "Play casino blackjack and practise basic strategy"
+msgstr "Juega blackjack de casino y practica la estrategia básica"
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons. The list MUST also end with a semicolon.
+#: data/io.github.H4ck70r.Veintiuno.desktop.in:7
+msgid "blackjack;21;twenty-one;cards;casino;veintiuno;"
+msgstr "blackjack;21;veintiuno;cartas;naipes;casino;"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:11
+msgid ""
+"Veintiuno is a complete blackjack table for your desktop. Play against the "
+"dealer with the real casino rules, keep track of your bankroll and sharpen "
+"your game."
+msgstr "Veintiuno es una mesa de blackjack completa para tu escritorio. Juega contra el crupier con las reglas reales de casino, lleva el control de tu saldo y mejora tu juego."
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:15
+msgid "Features:"
+msgstr "Características:"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:17
+msgid ""
+"Hit, stand, double down, split up to four hands, surrender and insurance"
+msgstr "Pedir, plantarse, doblar, dividir hasta en cuatro manos, rendirse y seguro"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:18
+msgid ""
+"Configurable rules: 1 to 8 decks, dealer hits or stands on soft 17, 3:2 or "
+"6:5 payouts, double after split, resplitting aces, European no-hole-card "
+"game and more"
+msgstr "Reglas configurables: de 1 a 8 barajas, el crupier pide o se planta con 17 suave, pagos 3:2 o 6:5, doblar después de dividir, volver a dividir ases, juego europeo sin carta oculta y más"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:19
+msgid "Ready-made rule presets and a live house-edge estimate"
+msgstr "Conjuntos de reglas predefinidos y cálculo en vivo de la ventaja de la casa"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:20
+msgid "Strategy coach that warns you when a play differs from basic strategy"
+msgstr "Entrenador que te avisa cuando una jugada no sigue la estrategia básica"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:21
+msgid "Hi-Lo running and true count trainer"
+msgstr "Entrenamiento de conteo Hi-Lo (conteo corrido y real)"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:22
+msgid "Detailed statistics and a persistent bankroll"
+msgstr "Estadísticas detalladas y saldo que se guarda entre partidas"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:23
+msgid "Smooth card animations, sound effects and full keyboard control"
+msgstr "Animaciones fluidas, efectos de sonido y control total con el teclado"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:25
+msgid "No real money is involved: chips are for fun and practice only."
+msgstr "No se usa dinero real: las fichas son sólo para divertirse y practicar."
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:29
+msgid "Hector \"H4CK70R\" Mejia"
+msgstr "Hector \"H4CK70R\" Mejia"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:47
+msgid "blackjack"
+msgstr "blackjack"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:48
+msgid "21"
+msgstr "21"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:49
+msgid "cards"
+msgstr "cartas"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:50
+msgid "casino"
+msgstr "casino"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:74
+msgid "Playing a split hand"
+msgstr "Jugando una mano dividida"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:78
+msgid "Placing a bet"
+msgstr "Haciendo una apuesta"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:82
+msgid "Configurable table rules"
+msgstr "Reglas de mesa configurables"
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:89
+msgid "First release."
+msgstr "Primera versión."
+
+#: src/veintiuno/main.py:96
+msgid "A complete casino blackjack table for Linux"
+msgstr "Una mesa de blackjack de casino completa para Linux"
+
+#: src/veintiuno/main.py:102
+msgid "translator-credits"
+msgstr "Hector \"H4CK70R\" Mejia"
+
+#: src/veintiuno/ui/format.py:24 src/veintiuno/ui/help.py:36
+msgid "Hit"
+msgstr "Pedir"
+
+#: src/veintiuno/ui/format.py:25 src/veintiuno/ui/help.py:37
+msgid "Stand"
+msgstr "Plantarse"
+
+#: src/veintiuno/ui/format.py:26 src/veintiuno/ui/help.py:38
+msgid "Double"
+msgstr "Doblar"
+
+#: src/veintiuno/ui/format.py:27 src/veintiuno/ui/help.py:39
+msgid "Split"
+msgstr "Dividir"
+
+#: src/veintiuno/ui/format.py:28 src/veintiuno/ui/help.py:40
+msgid "Surrender"
+msgstr "Rendirse"
+
+#: src/veintiuno/ui/format.py:34 src/veintiuno/ui/window.py:336
+msgid "Blackjack!"
+msgstr "¡Blackjack!"
+
+#: src/veintiuno/ui/format.py:35
+msgid "Win"
+msgstr "Ganas"
+
+#: src/veintiuno/ui/format.py:36
+msgid "Lose"
+msgstr "Pierdes"
+
+#: src/veintiuno/ui/format.py:37 src/veintiuno/ui/window.py:342
+msgid "Push"
+msgstr "Empate"
+
+#: src/veintiuno/ui/format.py:38
+msgid "Bust"
+msgstr "Te pasaste"
+
+#: src/veintiuno/ui/format.py:39
+msgid "Surrendered"
+msgstr "Rendida"
+
+#: src/veintiuno/ui/help.py:27
+msgid "Keyboard Shortcuts"
+msgstr "Atajos de teclado"
+
+#: src/veintiuno/ui/help.py:29
+msgid "Betting"
+msgstr "Apuestas"
+
+#: src/veintiuno/ui/help.py:30
+msgid "Add a 1, 5, 25, 100, 500 or 1,000 chip"
+msgstr "Agregar una ficha de 1, 5, 25, 100, 500 o 1,000"
+
+#: src/veintiuno/ui/help.py:31
+msgid "Rebet"
+msgstr "Repetir apuesta"
+
+#: src/veintiuno/ui/help.py:32
+msgid "Backspace"
+msgstr "Retroceso"
+
+#: src/veintiuno/ui/help.py:32
+msgid "Clear bet / change bet"
+msgstr "Borrar apuesta / cambiar apuesta"
+
+#: src/veintiuno/ui/help.py:33
+msgid "Enter or Space"
+msgstr "Intro o Espacio"
+
+#: src/veintiuno/ui/help.py:33
+msgid "Deal / rebet and deal"
+msgstr "Repartir / repetir apuesta y repartir"
+
+#: src/veintiuno/ui/help.py:35
+msgid "Playing"
+msgstr "Jugando"
+
+#: src/veintiuno/ui/help.py:41
+msgid "Take or decline insurance"
+msgstr "Tomar o rechazar el seguro"
+
+#: src/veintiuno/ui/help.py:42
+msgid "Basic strategy hint"
+msgstr "Sugerencia de estrategia básica"
+
+#: src/veintiuno/ui/help.py:44
+msgid "General"
+msgstr "General"
+
+#: src/veintiuno/ui/help.py:45
+msgid "New game"
+msgstr "Juego nuevo"
+
+#: src/veintiuno/ui/help.py:46 src/veintiuno/ui/stats.py:20
+msgid "Statistics"
+msgstr "Estadísticas"
+
+#: src/veintiuno/ui/help.py:47
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: src/veintiuno/ui/help.py:48
+msgid "Keyboard shortcuts"
+msgstr "Atajos de teclado"
+
+#: src/veintiuno/ui/help.py:49
+msgid "Quit"
+msgstr "Salir"
+
+#: src/veintiuno/ui/help.py:63
+msgid "How to Play"
+msgstr "Cómo jugar"
+
+#: src/veintiuno/ui/help.py:65
+msgid "Goal"
+msgstr "Objetivo"
+
+#: src/veintiuno/ui/help.py:66
+msgid ""
+"Beat the dealer by finishing closer to 21 without going over. Number cards "
+"count their value, faces count 10 and aces count 1 or 11."
+msgstr "Gánale al crupier quedando más cerca de 21 sin pasarte. Las cartas numéricas valen su número, las figuras valen 10 y los ases valen 1 u 11."
+
+#: src/veintiuno/ui/help.py:69
+msgid ""
+"An ace with a ten-value card as your first two cards is a blackjack. It pays "
+"3 to 2 (or 6 to 5 if the table says so) unless the dealer also has one."
+msgstr "Un as con una carta de valor 10 como tus dos primeras cartas es un blackjack. Paga 3 a 2 (o 6 a 5 si así lo indica la mesa), salvo que el crupier también tenga uno."
+
+#: src/veintiuno/ui/help.py:71
+msgid "Your Options"
+msgstr "Tus opciones"
+
+#: src/veintiuno/ui/help.py:72
+msgid ""
+"Hit takes another card. Stand keeps your total. Double doubles your bet and "
+"gives you exactly one more card. Split turns a pair into two hands with a "
+"bet each. Surrender gives up the hand and returns half the bet; it is only "
+"available as your first decision."
+msgstr "Pedir te da otra carta. Plantarse conserva tu total. Doblar duplica tu apuesta y te da exactamente una carta más. Dividir convierte un par en dos manos, cada una con su apuesta. Rendirse abandona la mano y te devuelve la mitad de la apuesta; sólo se puede como primera decisión."
+
+#: src/veintiuno/ui/help.py:76 src/veintiuno/ui/preferences.py:112
+#: src/veintiuno/ui/table.py:349
+msgid "Insurance"
+msgstr "Seguro"
+
+#: src/veintiuno/ui/help.py:77
+msgid ""
+"When the dealer shows an ace you may bet half your wager that the dealer has "
+"blackjack. It pays 2 to 1. Basic strategy never takes insurance."
+msgstr "Cuando el crupier muestra un as puedes apostar la mitad de tu apuesta a que tiene blackjack. Paga 2 a 1. La estrategia básica nunca toma el seguro."
+
+#: src/veintiuno/ui/help.py:79
+msgid "The Dealer"
+msgstr "El crupier"
+
+#: src/veintiuno/ui/help.py:80
+msgid ""
+"The dealer has no choices: draws until reaching 17 or more, and on some "
+"tables also hits a soft 17 (a 17 counting an ace as 11)."
+msgstr "El crupier no decide nada: pide hasta llegar a 17 o más y, en algunas mesas, también pide con 17 suave (un 17 contando un as como 11)."
+
+#: src/veintiuno/ui/help.py:82 src/veintiuno/ui/preferences.py:63
+msgid "Training"
+msgstr "Entrenamiento"
+
+#: src/veintiuno/ui/help.py:83
+msgid ""
+"Turn on the strategy coach to be told when a play differs from basic "
+"strategy, press ? for a hint, and enable the card count to practise Hi-Lo "
+"counting: 2–6 count +1, 7–9 count 0, tens and aces count −1. The true count "
+"is the running count divided by the decks left in the shoe."
+msgstr "Activa el entrenador para que te avise cuando una jugada no sigue la estrategia básica, presiona ? para pedir una sugerencia y muestra el conteo para practicar Hi-Lo: del 2 al 6 cuentan +1, del 7 al 9 cuentan 0, los dieces y los ases cuentan −1. El conteo real es el conteo corrido dividido entre las barajas que quedan en el zapato."
+
+#: src/veintiuno/ui/preferences.py:50
+msgid "Game"
+msgstr "Juego"
+
+#: src/veintiuno/ui/preferences.py:51
+msgid "Table"
+msgstr "Mesa"
+
+#: src/veintiuno/ui/preferences.py:52
+msgid "Animation Speed"
+msgstr "Velocidad de animación"
+
+#: src/veintiuno/ui/preferences.py:53
+msgid "Off"
+msgstr "Desactivada"
+
+#: src/veintiuno/ui/preferences.py:53
+msgid "Fast"
+msgstr "Rápida"
+
+#: src/veintiuno/ui/preferences.py:53
+msgid "Normal"
+msgstr "Normal"
+
+#: src/veintiuno/ui/preferences.py:53
+msgid "Slow"
+msgstr "Lenta"
+
+#: src/veintiuno/ui/preferences.py:55
+msgid "Card Back"
+msgstr "Reverso de las cartas"
+
+#: src/veintiuno/ui/preferences.py:56
+msgid "Red"
+msgstr "Rojo"
+
+#: src/veintiuno/ui/preferences.py:56
+msgid "Blue"
+msgstr "Azul"
+
+#: src/veintiuno/ui/preferences.py:56
+msgid "Green"
+msgstr "Verde"
+
+#: src/veintiuno/ui/preferences.py:57
+msgid "Show Hand Totals"
+msgstr "Mostrar el total de cada mano"
+
+#: src/veintiuno/ui/preferences.py:58
+msgid "Sound Effects"
+msgstr "Efectos de sonido"
+
+#: src/veintiuno/ui/preferences.py:64
+msgid "Strategy Coach"
+msgstr "Entrenador de estrategia"
+
+#: src/veintiuno/ui/preferences.py:65
+msgid "Warn when a decision differs from basic strategy"
+msgstr "Avisar cuando una decisión no sigue la estrategia básica"
+
+#: src/veintiuno/ui/preferences.py:66
+msgid "Show Card Count"
+msgstr "Mostrar el conteo de cartas"
+
+#: src/veintiuno/ui/preferences.py:67
+msgid "Display the Hi-Lo running and true count"
+msgstr "Muestra el conteo Hi-Lo corrido y real"
+
+#: src/veintiuno/ui/preferences.py:72 src/veintiuno/ui/stats.py:56
+msgid "Money"
+msgstr "Dinero"
+
+#: src/veintiuno/ui/preferences.py:73
+msgid "Starting Bankroll"
+msgstr "Saldo inicial"
+
+#: src/veintiuno/ui/preferences.py:73
+msgid "Used for new games and rebuys"
+msgstr "Se usa en juegos nuevos y recompras"
+
+#: src/veintiuno/ui/preferences.py:75
+msgid "Minimum Bet"
+msgstr "Apuesta mínima"
+
+#: src/veintiuno/ui/preferences.py:76
+msgid "Maximum Bet"
+msgstr "Apuesta máxima"
+
+#: src/veintiuno/ui/preferences.py:83
+msgid "Rules"
+msgstr "Reglas"
+
+#: src/veintiuno/ui/preferences.py:84
+msgid "Shoe and Dealer"
+msgstr "Zapato y crupier"
+
+#: src/veintiuno/ui/preferences.py:87
+msgid "Decks"
+msgstr "Barajas"
+
+#: src/veintiuno/ui/preferences.py:88
+msgid "Penetration"
+msgstr "Penetración"
+
+#: src/veintiuno/ui/preferences.py:88
+msgid "Percent of the shoe dealt before reshuffling"
+msgstr "Porcentaje del zapato que se reparte antes de barajar de nuevo"
+
+#: src/veintiuno/ui/preferences.py:90
+msgid "Dealer Hits Soft 17"
+msgstr "El crupier pide con 17 suave"
+
+#: src/veintiuno/ui/preferences.py:91
+msgid "Dealer Peeks for Blackjack"
+msgstr "El crupier revisa si tiene blackjack"
+
+#: src/veintiuno/ui/preferences.py:92
+msgid ""
+"Off plays the European no-hole-card game: doubles and splits are lost to a "
+"dealer blackjack"
+msgstr "Desactivado juega a la europea, sin carta oculta: si el crupier hace blackjack se pierden también las apuestas dobladas y divididas"
+
+#: src/veintiuno/ui/preferences.py:95
+msgid "Blackjack Pays"
+msgstr "El blackjack paga"
+
+#: src/veintiuno/ui/preferences.py:101
+msgid "Player Options"
+msgstr "Opciones del jugador"
+
+#: src/veintiuno/ui/preferences.py:102
+msgid "Double Down On"
+msgstr "Doblar con"
+
+#: src/veintiuno/ui/preferences.py:103
+msgid "Any two cards"
+msgstr "Cualquier par de cartas"
+
+#: src/veintiuno/ui/preferences.py:103
+msgid "9, 10 or 11"
+msgstr "9, 10 u 11"
+
+#: src/veintiuno/ui/preferences.py:104
+msgid "10 or 11"
+msgstr "10 u 11"
+
+#: src/veintiuno/ui/preferences.py:105
+msgid "Double After Split"
+msgstr "Doblar después de dividir"
+
+#: src/veintiuno/ui/preferences.py:106
+msgid "Maximum Hands After Splitting"
+msgstr "Máximo de manos al dividir"
+
+#: src/veintiuno/ui/preferences.py:107
+msgid "Resplit Aces"
+msgstr "Volver a dividir ases"
+
+#: src/veintiuno/ui/preferences.py:108
+msgid "Hit Split Aces"
+msgstr "Pedir con ases divididos"
+
+#: src/veintiuno/ui/preferences.py:109
+msgid "Split Unlike Tens"
+msgstr "Dividir dieces distintos"
+
+#: src/veintiuno/ui/preferences.py:109
+msgid "For example, a king and a queen"
+msgstr "Por ejemplo, un rey y una reina"
+
+#: src/veintiuno/ui/preferences.py:111
+msgid "Late Surrender"
+msgstr "Rendición tardía"
+
+#: src/veintiuno/ui/preferences.py:118
+msgid "Presets"
+msgstr "Reglas predefinidas"
+
+#: src/veintiuno/ui/preferences.py:120
+msgid "Las Vegas Strip"
+msgstr "Las Vegas Strip"
+
+#: src/veintiuno/ui/preferences.py:120
+msgid "6 decks, S17, DAS, late surrender, 3:2"
+msgstr "6 barajas, S17, doblar tras dividir, rendición tardía, 3:2"
+
+#: src/veintiuno/ui/preferences.py:121
+msgid "Atlantic City"
+msgstr "Atlantic City"
+
+#: src/veintiuno/ui/preferences.py:121
+msgid "8 decks, S17, DAS, late surrender, 3:2"
+msgstr "8 barajas, S17, doblar tras dividir, rendición tardía, 3:2"
+
+#: src/veintiuno/ui/preferences.py:123
+msgid "Downtown Single Deck"
+msgstr "Downtown, una baraja"
+
+#: src/veintiuno/ui/preferences.py:123
+msgid "1 deck, H17, doubles on 10–11 only, 3:2"
+msgstr "1 baraja, H17, doblar sólo con 10–11, 3:2"
+
+#: src/veintiuno/ui/preferences.py:126
+msgid "European"
+msgstr "Europea"
+
+#: src/veintiuno/ui/preferences.py:126
+msgid "6 decks, no hole card, doubles on 9–11, no surrender"
+msgstr "6 barajas, sin carta oculta, doblar con 9–11, sin rendición"
+
+#: src/veintiuno/ui/preferences.py:194
+#, python-brace-format
+msgid "House edge ≈ {edge:.2f}%"
+msgstr "Ventaja de la casa ≈ {edge:.2f}%"
+
+#: src/veintiuno/ui/preferences.py:213
+msgid "Preset applied"
+msgstr "Reglas aplicadas"
+
+#: src/veintiuno/ui/stats.py:24 src/veintiuno/ui/stats.py:85
+msgid "_Reset"
+msgstr "_Reiniciar"
+
+#: src/veintiuno/ui/stats.py:48
+msgid "Results"
+msgstr "Resultados"
+
+#: src/veintiuno/ui/stats.py:49
+msgid "Rounds Played"
+msgstr "Rondas jugadas"
+
+#: src/veintiuno/ui/stats.py:50
+msgid "Hands Played"
+msgstr "Manos jugadas"
+
+#: src/veintiuno/ui/stats.py:51
+msgid "Won"
+msgstr "Ganadas"
+
+#: src/veintiuno/ui/stats.py:52
+msgid "Lost"
+msgstr "Perdidas"
+
+#: src/veintiuno/ui/stats.py:53
+msgid "Pushed"
+msgstr "Empatadas"
+
+#: src/veintiuno/ui/stats.py:54
+msgid "Best Winning Streak"
+msgstr "Mejor racha ganadora"
+
+#: src/veintiuno/ui/stats.py:57
+msgid "Net Result"
+msgstr "Resultado neto"
+
+#: src/veintiuno/ui/stats.py:58
+msgid "Total Wagered"
+msgstr "Total apostado"
+
+#: src/veintiuno/ui/stats.py:59
+msgid "Return per Bet"
+msgstr "Rendimiento por apuesta"
+
+#: src/veintiuno/ui/stats.py:60
+msgid "Biggest Win"
+msgstr "Mayor ganancia"
+
+#: src/veintiuno/ui/stats.py:61
+msgid "Biggest Loss"
+msgstr "Mayor pérdida"
+
+#: src/veintiuno/ui/stats.py:62
+msgid "Peak Bankroll"
+msgstr "Saldo máximo"
+
+#: src/veintiuno/ui/stats.py:63
+msgid "Rebuys"
+msgstr "Recompras"
+
+#: src/veintiuno/ui/stats.py:65
+msgid "Plays"
+msgstr "Jugadas"
+
+#: src/veintiuno/ui/stats.py:66
+msgid "Blackjacks"
+msgstr "Blackjacks"
+
+#: src/veintiuno/ui/stats.py:67
+msgid "Busts"
+msgstr "Veces que te pasaste"
+
+#: src/veintiuno/ui/stats.py:68
+msgid "Doubles Won"
+msgstr "Dobladas ganadas"
+
+#: src/veintiuno/ui/stats.py:69
+msgid "Splits"
+msgstr "Divisiones"
+
+#: src/veintiuno/ui/stats.py:70
+msgid "Surrenders"
+msgstr "Rendiciones"
+
+#: src/veintiuno/ui/stats.py:71
+msgid "Insurance Won"
+msgstr "Seguros ganados"
+
+#: src/veintiuno/ui/stats.py:72
+msgid "Dealer Blackjacks"
+msgstr "Blackjacks del crupier"
+
+#: src/veintiuno/ui/stats.py:73
+msgid "Dealer Busts"
+msgstr "El crupier se pasó"
+
+#: src/veintiuno/ui/stats.py:75
+msgid "Strategy"
+msgstr "Estrategia"
+
+#: src/veintiuno/ui/stats.py:76
+msgid "Decisions"
+msgstr "Decisiones"
+
+#: src/veintiuno/ui/stats.py:77
+msgid "Basic Strategy Accuracy"
+msgstr "Apego a la estrategia básica"
+
+#: src/veintiuno/ui/stats.py:82
+msgid "Reset Statistics?"
+msgstr "¿Reiniciar las estadísticas?"
+
+#: src/veintiuno/ui/stats.py:83
+msgid "All statistics will be permanently erased."
+msgstr "Se borrarán todas las estadísticas de forma permanente."
+
+#: src/veintiuno/ui/stats.py:84 src/veintiuno/ui/window.py:435
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#: src/veintiuno/ui/table.py:392 src/veintiuno/ui/table.py:393
+msgid "Insurance?"
+msgstr "¿Seguro?"
+
+#: src/veintiuno/ui/table.py:425
+#, python-brace-format
+msgid "BLACKJACK PAYS {num} TO {den}"
+msgstr "EL BLACKJACK PAGA {num} A {den}"
+
+#: src/veintiuno/ui/table.py:427
+msgid "Dealer hits soft 17"
+msgstr "El crupier pide con 17 suave"
+
+#: src/veintiuno/ui/table.py:427
+msgid "Dealer stands on all 17s"
+msgstr "El crupier se planta con todo 17"
+
+#: src/veintiuno/ui/table.py:430
+msgid "Insurance pays 2 to 1"
+msgstr "El seguro paga 2 a 1"
+
+#: src/veintiuno/ui/table.py:437
+#, python-brace-format
+msgid "Table limits {min} – {max}"
+msgstr "Límites de la mesa {min} – {max}"
+
+#: src/veintiuno/ui/table.py:475
+msgid "Place your bet"
+msgstr "Haz tu apuesta"
+
+#: src/veintiuno/ui/window.py:34
+#, python-brace-format
+msgid "Add a {amount} chip"
+msgstr "Agregar una ficha de {amount}"
+
+#: src/veintiuno/ui/window.py:35 src/veintiuno/ui/window.py:313
+#, python-brace-format
+msgid "Bet {amount}"
+msgstr "Apuesta {amount}"
+
+#: src/veintiuno/ui/window.py:66
+msgid "Basic strategy hint (?)"
+msgstr "Sugerencia de estrategia básica (?)"
+
+#: src/veintiuno/ui/window.py:71 src/veintiuno/ui/window.py:436
+msgid "_New Game"
+msgstr "_Juego nuevo"
+
+#: src/veintiuno/ui/window.py:72
+msgid "_Statistics"
+msgstr "_Estadísticas"
+
+#: src/veintiuno/ui/window.py:75
+msgid "_Preferences"
+msgstr "_Preferencias"
+
+#: src/veintiuno/ui/window.py:76
+msgid "_Keyboard Shortcuts"
+msgstr "_Atajos de teclado"
+
+#: src/veintiuno/ui/window.py:77
+msgid "_How to Play"
+msgstr "_Cómo jugar"
+
+#: src/veintiuno/ui/window.py:78
+msgid "_About Veintiuno"
+msgstr "_Acerca de Veintiuno"
+
+#: src/veintiuno/ui/window.py:81
+msgid "Main Menu"
+msgstr "Menú principal"
+
+#: src/veintiuno/ui/window.py:148
+#, python-brace-format
+msgid "Add {amount} ({key})"
+msgstr "Agregar {amount} ({key})"
+
+#: src/veintiuno/ui/window.py:151
+msgid "_Clear"
+msgstr "_Borrar"
+
+#: src/veintiuno/ui/window.py:151
+msgid "Clear bet (Backspace)"
+msgstr "Borrar la apuesta (Retroceso)"
+
+#: src/veintiuno/ui/window.py:152
+msgid "_Rebet"
+msgstr "_Repetir"
+
+#: src/veintiuno/ui/window.py:152
+msgid "Bet the same as last hand (B)"
+msgstr "Apostar lo mismo que la mano anterior (B)"
+
+#: src/veintiuno/ui/window.py:153
+msgid "_Deal"
+msgstr "Re_partir"
+
+#: src/veintiuno/ui/window.py:153
+msgid "Deal (Enter)"
+msgstr "Repartir (Intro)"
+
+#: src/veintiuno/ui/window.py:159 src/veintiuno/ui/window.py:279
+msgid "_Take Insurance"
+msgstr "_Tomar seguro"
+
+#: src/veintiuno/ui/window.py:161
+msgid "_No Insurance"
+msgstr "_Sin seguro"
+
+#: src/veintiuno/ui/window.py:166
+msgid "_Hit"
+msgstr "_Pedir"
+
+#: src/veintiuno/ui/window.py:166
+msgid "Take another card (H)"
+msgstr "Pedir otra carta (H)"
+
+#: src/veintiuno/ui/window.py:167
+msgid "_Stand"
+msgstr "P_lantarse"
+
+#: src/veintiuno/ui/window.py:167
+msgid "Keep your hand (S)"
+msgstr "Quedarte con tu mano (S)"
+
+#: src/veintiuno/ui/window.py:168
+msgid "_Double"
+msgstr "_Doblar"
+
+#: src/veintiuno/ui/window.py:168
+msgid "Double the bet, take one card (D)"
+msgstr "Duplicar la apuesta y recibir una sola carta (D)"
+
+#: src/veintiuno/ui/window.py:169
+msgid "S_plit"
+msgstr "Di_vidir"
+
+#: src/veintiuno/ui/window.py:169
+msgid "Split the pair into two hands (P)"
+msgstr "Dividir el par en dos manos (P)"
+
+#: src/veintiuno/ui/window.py:170
+msgid "Su_rrender"
+msgstr "_Rendirse"
+
+#: src/veintiuno/ui/window.py:170
+msgid "Give up half the bet (R)"
+msgstr "Renunciar a la mitad de la apuesta (R)"
+
+#: src/veintiuno/ui/window.py:185
+msgid "_Change Bet"
+msgstr "_Cambiar apuesta"
+
+#: src/veintiuno/ui/window.py:185
+msgid "Place a new bet (Backspace)"
+msgstr "Hacer una apuesta nueva (Retroceso)"
+
+#: src/veintiuno/ui/window.py:186
+msgid "_Rebet and Deal"
+msgstr "_Repetir y repartir"
+
+#: src/veintiuno/ui/window.py:186
+msgid "Same bet, next hand (Enter)"
+msgstr "Misma apuesta, siguiente mano (Intro)"
+
+#: src/veintiuno/ui/window.py:190
+msgid "You're out of chips."
+msgstr "Te quedaste sin fichas."
+
+#: src/veintiuno/ui/window.py:262
+#, python-brace-format
+msgid "Rebuy {amount}"
+msgstr "Recomprar {amount}"
+
+#: src/veintiuno/ui/window.py:277
+msgid "The dealer shows an ace. You have blackjack: take even money?"
+msgstr "El crupier muestra un as. Tienes blackjack: ¿aceptas pago parejo?"
+
+#: src/veintiuno/ui/window.py:278
+#, python-brace-format
+msgid "The dealer shows an ace. Insurance costs {amount}."
+msgstr "El crupier muestra un as. El seguro cuesta {amount}."
+
+#: src/veintiuno/ui/window.py:279
+msgid "_Even Money"
+msgstr "_Pago parejo"
+
+#: src/veintiuno/ui/window.py:299
+#, python-brace-format
+msgid "Bankroll {amount}"
+msgstr "Saldo {amount}"
+
+#: src/veintiuno/ui/window.py:304
+#, python-brace-format
+msgid "RC {rc:+d} · TC {tc:+.1f} · Shoe {pct}%"
+msgstr "CC {rc:+d} · CR {tc:+.1f} · Zapato {pct}%"
+
+#: src/veintiuno/ui/window.py:307
+#, python-brace-format
+msgid "Edge {edge:.2f}%"
+msgstr "Ventaja {edge:.2f}%"
+
+#: src/veintiuno/ui/window.py:308
+msgid "House edge with perfect basic strategy"
+msgstr "Ventaja de la casa jugando la estrategia básica perfecta"
+
+#: src/veintiuno/ui/window.py:311
+#, python-brace-format
+msgid "Hand {n} of {total}"
+msgstr "Mano {n} de {total}"
+
+#: src/veintiuno/ui/window.py:314
+msgid "Choose your chips"
+msgstr "Elige tus fichas"
+
+#: src/veintiuno/ui/window.py:330
+msgid "H Hit · S Stand · D Double · P Split · R Surrender"
+msgstr "H Pedir · S Plantarse · D Doblar · P Dividir · R Rendirse"
+
+#: src/veintiuno/ui/window.py:345
+#, python-brace-format
+msgid "Dealer busts · {net}"
+msgstr "El crupier se pasó · {net}"
+
+#: src/veintiuno/ui/window.py:347
+#, python-brace-format
+msgid "Dealer {total} · {net}"
+msgstr "Crupier {total} · {net}"
+
+#: src/veintiuno/ui/window.py:350
+msgid "Insurance won"
+msgstr "Ganaste el seguro"
+
+#: src/veintiuno/ui/window.py:350
+msgid "Insurance lost"
+msgstr "Perdiste el seguro"
+
+#: src/veintiuno/ui/window.py:370
+#, python-brace-format
+msgid "Basic strategy: {advice} (you chose {action})"
+msgstr "Estrategia básica: {advice} (elegiste {action})"
+
+#: src/veintiuno/ui/window.py:390
+#, python-brace-format
+msgid "New shoe: {decks} decks shuffled"
+msgstr "Zapato nuevo: {decks} barajas mezcladas"
+
+#: src/veintiuno/ui/window.py:391
+msgid "New deck shuffled"
+msgstr "Baraja nueva mezclada"
+
+#: src/veintiuno/ui/window.py:421
+#, python-brace-format
+msgid "Rebought {amount}"
+msgstr "Recompraste {amount}"
+
+#: src/veintiuno/ui/window.py:428
+#, python-brace-format
+msgid "Basic strategy says: {action}"
+msgstr "La estrategia básica dice: {action}"
+
+#: src/veintiuno/ui/window.py:432
+msgid "Start a New Game?"
+msgstr "¿Empezar un juego nuevo?"
+
+#: src/veintiuno/ui/window.py:433
+#, python-brace-format
+msgid ""
+"Your bankroll goes back to {amount} and a fresh shoe is shuffled. Statistics "
+"are kept."
+msgstr "Tu saldo vuelve a {amount} y se mezcla un zapato nuevo. Las estadísticas se conservan."
+
+#: src/veintiuno/ui/window.py:475
+msgid "New rules apply from the next hand"
+msgstr "Las reglas nuevas aplican desde la siguiente mano"
+
+#: src/veintiuno/ui/window.py:500
+#, python-brace-format
+msgid "Could not save your progress: {error}"
+msgstr "No se pudo guardar tu progreso: {error}"

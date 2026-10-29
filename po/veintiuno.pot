@@ -1,0 +1,926 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the veintiuno package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: veintiuno 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-29 03:13-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/io.github.H4ck70r.Veintiuno.desktop.in:3
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:8
+msgid "Veintiuno"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.desktop.in:4 src/veintiuno/ui/help.py:68
+#: src/veintiuno/ui/table.py:369
+msgid "Blackjack"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.desktop.in:5
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:9
+msgid "Play casino blackjack and practise basic strategy"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or localise the semicolons. The list MUST also end with a semicolon.
+#: data/io.github.H4ck70r.Veintiuno.desktop.in:7
+msgid "blackjack;21;twenty-one;cards;casino;veintiuno;"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:11
+msgid ""
+"Veintiuno is a complete blackjack table for your desktop. Play against the "
+"dealer with the real casino rules, keep track of your bankroll and sharpen "
+"your game."
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:15
+msgid "Features:"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:17
+msgid ""
+"Hit, stand, double down, split up to four hands, surrender and insurance"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:18
+msgid ""
+"Configurable rules: 1 to 8 decks, dealer hits or stands on soft 17, 3:2 or "
+"6:5 payouts, double after split, resplitting aces, European no-hole-card "
+"game and more"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:19
+msgid "Ready-made rule presets and a live house-edge estimate"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:20
+msgid "Strategy coach that warns you when a play differs from basic strategy"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:21
+msgid "Hi-Lo running and true count trainer"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:22
+msgid "Detailed statistics and a persistent bankroll"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:23
+msgid "Smooth card animations, sound effects and full keyboard control"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:25
+msgid "No real money is involved: chips are for fun and practice only."
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:29
+msgid "Hector \"H4CK70R\" Mejia"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:47
+msgid "blackjack"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:48
+msgid "21"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:49
+msgid "cards"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:50
+msgid "casino"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:74
+msgid "Playing a split hand"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:78
+msgid "Placing a bet"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:82
+msgid "Configurable table rules"
+msgstr ""
+
+#: data/io.github.H4ck70r.Veintiuno.metainfo.xml.in:89
+msgid "First release."
+msgstr ""
+
+#: src/veintiuno/main.py:96
+msgid "A complete casino blackjack table for Linux"
+msgstr ""
+
+#: src/veintiuno/main.py:102
+msgid "translator-credits"
+msgstr ""
+
+#: src/veintiuno/ui/format.py:24 src/veintiuno/ui/help.py:36
+msgid "Hit"
+msgstr ""
+
+#: src/veintiuno/ui/format.py:25 src/veintiuno/ui/help.py:37
+msgid "Stand"
+msgstr ""
+
+#: src/veintiuno/ui/format.py:26 src/veintiuno/ui/help.py:38
+msgid "Double"
+msgstr ""
+
+#: src/veintiuno/ui/format.py:27 src/veintiuno/ui/help.py:39
+msgid "Split"
+msgstr ""
+
+#: src/veintiuno/ui/format.py:28 src/veintiuno/ui/help.py:40
+msgid "Surrender"
+msgstr ""
+
+#: src/veintiuno/ui/format.py:34 src/veintiuno/ui/window.py:336
+msgid "Blackjack!"
+msgstr ""
+
+#: src/veintiuno/ui/format.py:35
+msgid "Win"
+msgstr ""
+
+#: src/veintiuno/ui/format.py:36
+msgid "Lose"
+msgstr ""
+
+#: src/veintiuno/ui/format.py:37 src/veintiuno/ui/window.py:342
+msgid "Push"
+msgstr ""
+
+#: src/veintiuno/ui/format.py:38
+msgid "Bust"
+msgstr ""
+
+#: src/veintiuno/ui/format.py:39
+msgid "Surrendered"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:27
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:29
+msgid "Betting"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:30
+msgid "Add a 1, 5, 25, 100, 500 or 1,000 chip"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:31
+msgid "Rebet"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:32
+msgid "Backspace"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:32
+msgid "Clear bet / change bet"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:33
+msgid "Enter or Space"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:33
+msgid "Deal / rebet and deal"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:35
+msgid "Playing"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:41
+msgid "Take or decline insurance"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:42
+msgid "Basic strategy hint"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:44
+msgid "General"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:45
+msgid "New game"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:46 src/veintiuno/ui/stats.py:20
+msgid "Statistics"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:47
+msgid "Preferences"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:48
+msgid "Keyboard shortcuts"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:49
+msgid "Quit"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:63
+msgid "How to Play"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:65
+msgid "Goal"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:66
+msgid ""
+"Beat the dealer by finishing closer to 21 without going over. Number cards "
+"count their value, faces count 10 and aces count 1 or 11."
+msgstr ""
+
+#: src/veintiuno/ui/help.py:69
+msgid ""
+"An ace with a ten-value card as your first two cards is a blackjack. It pays "
+"3 to 2 (or 6 to 5 if the table says so) unless the dealer also has one."
+msgstr ""
+
+#: src/veintiuno/ui/help.py:71
+msgid "Your Options"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:72
+msgid ""
+"Hit takes another card. Stand keeps your total. Double doubles your bet and "
+"gives you exactly one more card. Split turns a pair into two hands with a "
+"bet each. Surrender gives up the hand and returns half the bet; it is only "
+"available as your first decision."
+msgstr ""
+
+#: src/veintiuno/ui/help.py:76 src/veintiuno/ui/preferences.py:112
+#: src/veintiuno/ui/table.py:349
+msgid "Insurance"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:77
+msgid ""
+"When the dealer shows an ace you may bet half your wager that the dealer has "
+"blackjack. It pays 2 to 1. Basic strategy never takes insurance."
+msgstr ""
+
+#: src/veintiuno/ui/help.py:79
+msgid "The Dealer"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:80
+msgid ""
+"The dealer has no choices: draws until reaching 17 or more, and on some "
+"tables also hits a soft 17 (a 17 counting an ace as 11)."
+msgstr ""
+
+#: src/veintiuno/ui/help.py:82 src/veintiuno/ui/preferences.py:63
+msgid "Training"
+msgstr ""
+
+#: src/veintiuno/ui/help.py:83
+msgid ""
+"Turn on the strategy coach to be told when a play differs from basic "
+"strategy, press ? for a hint, and enable the card count to practise Hi-Lo "
+"counting: 2–6 count +1, 7–9 count 0, tens and aces count −1. The true count "
+"is the running count divided by the decks left in the shoe."
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:50
+msgid "Game"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:51
+msgid "Table"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:52
+msgid "Animation Speed"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:53
+msgid "Off"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:53
+msgid "Fast"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:53
+msgid "Normal"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:53
+msgid "Slow"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:55
+msgid "Card Back"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:56
+msgid "Red"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:56
+msgid "Blue"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:56
+msgid "Green"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:57
+msgid "Show Hand Totals"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:58
+msgid "Sound Effects"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:64
+msgid "Strategy Coach"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:65
+msgid "Warn when a decision differs from basic strategy"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:66
+msgid "Show Card Count"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:67
+msgid "Display the Hi-Lo running and true count"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:72 src/veintiuno/ui/stats.py:56
+msgid "Money"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:73
+msgid "Starting Bankroll"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:73
+msgid "Used for new games and rebuys"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:75
+msgid "Minimum Bet"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:76
+msgid "Maximum Bet"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:83
+msgid "Rules"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:84
+msgid "Shoe and Dealer"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:87
+msgid "Decks"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:88
+msgid "Penetration"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:88
+msgid "Percent of the shoe dealt before reshuffling"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:90
+msgid "Dealer Hits Soft 17"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:91
+msgid "Dealer Peeks for Blackjack"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:92
+msgid ""
+"Off plays the European no-hole-card game: doubles and splits are lost to a "
+"dealer blackjack"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:95
+msgid "Blackjack Pays"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:101
+msgid "Player Options"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:102
+msgid "Double Down On"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:103
+msgid "Any two cards"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:103
+msgid "9, 10 or 11"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:104
+msgid "10 or 11"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:105
+msgid "Double After Split"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:106
+msgid "Maximum Hands After Splitting"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:107
+msgid "Resplit Aces"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:108
+msgid "Hit Split Aces"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:109
+msgid "Split Unlike Tens"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:109
+msgid "For example, a king and a queen"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:111
+msgid "Late Surrender"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:118
+msgid "Presets"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:120
+msgid "Las Vegas Strip"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:120
+msgid "6 decks, S17, DAS, late surrender, 3:2"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:121
+msgid "Atlantic City"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:121
+msgid "8 decks, S17, DAS, late surrender, 3:2"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:123
+msgid "Downtown Single Deck"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:123
+msgid "1 deck, H17, doubles on 10–11 only, 3:2"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:126
+msgid "European"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:126
+msgid "6 decks, no hole card, doubles on 9–11, no surrender"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:194
+#, python-brace-format
+msgid "House edge ≈ {edge:.2f}%"
+msgstr ""
+
+#: src/veintiuno/ui/preferences.py:213
+msgid "Preset applied"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:24 src/veintiuno/ui/stats.py:85
+msgid "_Reset"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:48
+msgid "Results"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:49
+msgid "Rounds Played"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:50
+msgid "Hands Played"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:51
+msgid "Won"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:52
+msgid "Lost"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:53
+msgid "Pushed"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:54
+msgid "Best Winning Streak"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:57
+msgid "Net Result"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:58
+msgid "Total Wagered"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:59
+msgid "Return per Bet"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:60
+msgid "Biggest Win"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:61
+msgid "Biggest Loss"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:62
+msgid "Peak Bankroll"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:63
+msgid "Rebuys"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:65
+msgid "Plays"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:66
+msgid "Blackjacks"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:67
+msgid "Busts"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:68
+msgid "Doubles Won"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:69
+msgid "Splits"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:70
+msgid "Surrenders"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:71
+msgid "Insurance Won"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:72
+msgid "Dealer Blackjacks"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:73
+msgid "Dealer Busts"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:75
+msgid "Strategy"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:76
+msgid "Decisions"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:77
+msgid "Basic Strategy Accuracy"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:82
+msgid "Reset Statistics?"
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:83
+msgid "All statistics will be permanently erased."
+msgstr ""
+
+#: src/veintiuno/ui/stats.py:84 src/veintiuno/ui/window.py:435
+msgid "_Cancel"
+msgstr ""
+
+#: src/veintiuno/ui/table.py:392 src/veintiuno/ui/table.py:393
+msgid "Insurance?"
+msgstr ""
+
+#: src/veintiuno/ui/table.py:425
+#, python-brace-format
+msgid "BLACKJACK PAYS {num} TO {den}"
+msgstr ""
+
+#: src/veintiuno/ui/table.py:427
+msgid "Dealer hits soft 17"
+msgstr ""
+
+#: src/veintiuno/ui/table.py:427
+msgid "Dealer stands on all 17s"
+msgstr ""
+
+#: src/veintiuno/ui/table.py:430
+msgid "Insurance pays 2 to 1"
+msgstr ""
+
+#: src/veintiuno/ui/table.py:437
+#, python-brace-format
+msgid "Table limits {min} – {max}"
+msgstr ""
+
+#: src/veintiuno/ui/table.py:475
+msgid "Place your bet"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:34
+#, python-brace-format
+msgid "Add a {amount} chip"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:35 src/veintiuno/ui/window.py:313
+#, python-brace-format
+msgid "Bet {amount}"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:66
+msgid "Basic strategy hint (?)"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:71 src/veintiuno/ui/window.py:436
+msgid "_New Game"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:72
+msgid "_Statistics"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:75
+msgid "_Preferences"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:76
+msgid "_Keyboard Shortcuts"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:77
+msgid "_How to Play"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:78
+msgid "_About Veintiuno"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:81
+msgid "Main Menu"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:148
+#, python-brace-format
+msgid "Add {amount} ({key})"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:151
+msgid "_Clear"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:151
+msgid "Clear bet (Backspace)"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:152
+msgid "_Rebet"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:152
+msgid "Bet the same as last hand (B)"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:153
+msgid "_Deal"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:153
+msgid "Deal (Enter)"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:159 src/veintiuno/ui/window.py:279
+msgid "_Take Insurance"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:161
+msgid "_No Insurance"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:166
+msgid "_Hit"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:166
+msgid "Take another card (H)"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:167
+msgid "_Stand"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:167
+msgid "Keep your hand (S)"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:168
+msgid "_Double"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:168
+msgid "Double the bet, take one card (D)"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:169
+msgid "S_plit"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:169
+msgid "Split the pair into two hands (P)"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:170
+msgid "Su_rrender"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:170
+msgid "Give up half the bet (R)"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:185
+msgid "_Change Bet"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:185
+msgid "Place a new bet (Backspace)"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:186
+msgid "_Rebet and Deal"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:186
+msgid "Same bet, next hand (Enter)"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:190
+msgid "You're out of chips."
+msgstr ""
+
+#: src/veintiuno/ui/window.py:262
+#, python-brace-format
+msgid "Rebuy {amount}"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:277
+msgid "The dealer shows an ace. You have blackjack: take even money?"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:278
+#, python-brace-format
+msgid "The dealer shows an ace. Insurance costs {amount}."
+msgstr ""
+
+#: src/veintiuno/ui/window.py:279
+msgid "_Even Money"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:299
+#, python-brace-format
+msgid "Bankroll {amount}"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:304
+#, python-brace-format
+msgid "RC {rc:+d} · TC {tc:+.1f} · Shoe {pct}%"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:307
+#, python-brace-format
+msgid "Edge {edge:.2f}%"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:308
+msgid "House edge with perfect basic strategy"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:311
+#, python-brace-format
+msgid "Hand {n} of {total}"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:314
+msgid "Choose your chips"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:330
+msgid "H Hit · S Stand · D Double · P Split · R Surrender"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:345
+#, python-brace-format
+msgid "Dealer busts · {net}"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:347
+#, python-brace-format
+msgid "Dealer {total} · {net}"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:350
+msgid "Insurance won"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:350
+msgid "Insurance lost"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:370
+#, python-brace-format
+msgid "Basic strategy: {advice} (you chose {action})"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:390
+#, python-brace-format
+msgid "New shoe: {decks} decks shuffled"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:391
+msgid "New deck shuffled"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:421
+#, python-brace-format
+msgid "Rebought {amount}"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:428
+#, python-brace-format
+msgid "Basic strategy says: {action}"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:432
+msgid "Start a New Game?"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:433
+#, python-brace-format
+msgid ""
+"Your bankroll goes back to {amount} and a fresh shoe is shuffled. Statistics "
+"are kept."
+msgstr ""
+
+#: src/veintiuno/ui/window.py:475
+msgid "New rules apply from the next hand"
+msgstr ""
+
+#: src/veintiuno/ui/window.py:500
+#, python-brace-format
+msgid "Could not save your progress: {error}"
+msgstr ""

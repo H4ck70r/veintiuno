@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2026 Hector "H4CK70R" Mejia -->
+<component type="desktop-application">
+  <id>io.github.H4ck70r.Veintiuno</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Veintiuno</name>
+  <summary>Play casino blackjack and practise basic strategy</summary>
+  <description>
+    <p>
+      Veintiuno is a complete blackjack table for your desktop. Play against the dealer with
+      the real casino rules, keep track of your bankroll and sharpen your game.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Hit, stand, double down, split up to four hands, surrender and insurance</li>
+      <li>Configurable rules: 1 to 8 decks, dealer hits or stands on soft 17, 3:2 or 6:5 payouts, double after split, resplitting aces, European no-hole-card game and more</li>
+      <li>Ready-made rule presets and a live house-edge estimate</li>
+      <li>Strategy coach that warns you when a play differs from basic strategy</li>
+      <li>Hi-Lo running and true count trainer</li>
+      <li>Detailed statistics and a persistent bankroll</li>
+      <li>Smooth card animations, sound effects and full keyboard control</li>
+    </ul>
+    <p>No real money is involved: chips are for fun and practice only.</p>
+  </description>
+
+  <developer id="io.github.h4ck70r">
+    <name>Hector "H4CK70R" Mejia</name>
+  </developer>
+
+  <launchable type="desktop-id">io.github.H4ck70r.Veintiuno.desktop</launchable>
+  <provides>
+    <binary>veintiuno</binary>
+  </provides>
+
+  <url type="homepage">https://github.com/H4ck70r/veintiuno</url>
+  <url type="bugtracker">https://github.com/H4ck70r/veintiuno/issues</url>
+  <url type="vcs-browser">https://github.com/H4ck70r/veintiuno</url>
+  <url type="translate">https://github.com/H4ck70r/veintiuno/tree/main/po</url>
+
+  <categories>
+    <category>Game</category>
+    <category>CardGame</category>
+  </categories>
+  <keywords>
+    <keyword>blackjack</keyword>
+    <keyword>21</keyword>
+    <keyword>cards</keyword>
+    <keyword>casino</keyword>
+  </keywords>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="money-gambling">mild</content_attribute>
+  </content_rating>
+
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </supports>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#7fd1a4</color>
+    <color type="primary" scheme_preference="dark">#0b4d2c</color>
+  </branding>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/H4ck70r/veintiuno/v1.0.0/data/screenshots/table.png</image>
+      <caption>Playing a split hand</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/H4ck70r/veintiuno/v1.0.0/data/screenshots/betting.png</image>
+      <caption>Placing a bet</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/H4ck70r/veintiuno/v1.0.0/data/screenshots/rules.png</image>
+      <caption>Configurable table rules</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.0.0" date="2026-10-29">
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

@@ -1,0 +1,9 @@
+data/io.github.H4ck70r.Veintiuno.desktop.in
+data/io.github.H4ck70r.Veintiuno.metainfo.xml.in
+src/veintiuno/main.py
+src/veintiuno/ui/format.py
+src/veintiuno/ui/help.py
+src/veintiuno/ui/preferences.py
+src/veintiuno/ui/stats.py
+src/veintiuno/ui/table.py
+src/veintiuno/ui/window.py

@@ -1,0 +1,40 @@
+{
+  "id": "io.github.H4ck70r.Veintiuno",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "51",
+  "sdk": "org.gnome.Sdk",
+  "command": "veintiuno",
+  "finish-args": [
+    "--share=ipc",
+    "--socket=fallback-x11",
+    "--socket=wayland",
+    "--socket=pulseaudio",
+    "--device=dri"
+  ],
+  "cleanup": [
+    "/include",
+    "/lib/pkgconfig",
+    "/share/pkgconfig",
+    "*.la",
+    "*.a"
+  ],
+  "modules": [
+    {
+      "name": "veintiuno",
+      "buildsystem": "meson",
+      "run-tests": true,
+      "sources": [
+        {
+          "type": "dir",
+          "path": ".",
+          "skip": [
+            "_build",
+            "build-dir",
+            "repo",
+            ".flatpak-builder"
+          ]
+        }
+      ]
+    }
+  ]
+}
